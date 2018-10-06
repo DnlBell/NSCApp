@@ -2,7 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b39cb8d-0832-477b-b1b8-252a83cc2672" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/.buckconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/.circleci/config-workflows.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/.circleci/config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/.flowconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/.watchmanconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/App-test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/__tests__/App-test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/__tests__/__snapshots__/App-test.js.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/BUCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/java/com/mindspan/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/java/com/mindspan/MainApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/keystores/BUCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/keystores/debug.keystore.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan-tvOS/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan-tvOSTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan.xcodeproj/xcshareddata/xcschemes/mindSpan-tvOS.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan.xcodeproj/xcshareddata/xcschemes/mindSpan.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan/AppDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan/AppDelegate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan/Base.lproj/LaunchScreen.xib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan/Images.xcassets/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpan/main.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpanTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/ios/mindSpanTests/mindSpanTests.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mindSpan/package.json" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="42" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="42" />
+            <state relative-caret-position="510">
+              <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -44,6 +101,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/App.js" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
       </list>
     </option>
   </component>
@@ -58,8 +116,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="568" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1466" />
+    <option name="y" value="7" />
     <option name="width" value="1227" />
     <option name="height" value="1040" />
   </component>
@@ -76,6 +135,11 @@
               <item name="NSCApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="NSCApp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="NSCApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NSCApp" type="462c0819:PsiDirectoryNode" />
+              <item name=".circleci" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -84,6 +148,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../NSCApp2" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
@@ -112,15 +177,15 @@
       <option name="presentableId" value="Default" />
       <updated>1538699548400</updated>
       <workItem from="1538699554844" duration="1310000" />
-      <workItem from="1538705361841" duration="446000" />
+      <workItem from="1538705361841" duration="756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1756000" />
+    <option name="totallyTimeSpent" value="2066000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="568" y="0" width="1227" height="1040" extended-state="0" />
+    <frame x="-1466" y="7" width="1227" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.342692" />
@@ -158,6 +223,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -165,10 +244,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="42" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="42" />
+        <state relative-caret-position="510">
+          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
         </state>
       </provider>
     </entry>
