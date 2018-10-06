@@ -2,7 +2,7 @@
 North Seattle College App
 
 
-
+[![CircleCI](https://circleci.com/gh/NorthSeattleCollegeDreamTeam/NSCApp/tree/master.svg?style=svg)](https://circleci.com/gh/NorthSeattleCollegeDreamTeam/NSCApp/tree/master)
 
 # MindSpand
 
