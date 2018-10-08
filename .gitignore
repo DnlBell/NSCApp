@@ -6,6 +6,4 @@ npm-debug.*
 .idea
 .editorconfig
 
-package-lock.json
-package.json
 
