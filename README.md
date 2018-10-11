@@ -79,7 +79,7 @@ GitHub
 
 ## Authors
 
-* **Todd Foxford** - *Initial work* - [PurpleBooth](https://github.com/AlphaDork/NSCApp)
+* **Todd Foxford** - *Initial work* - [GitHub](https://github.com/AlphaDork/NSCApp)
 * **Ryan Brennan** - *Initial work* - [GitHub](https://github.com/ryanybrennan)
 * **Leyth Adan** - *Initial work* - [GitHub](https://github.com/wehelie)
 * **Wenbin Guan** - *Initial work* - [GitHub](https://github.com/iroenu)
