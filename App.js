@@ -5,10 +5,6 @@ import ModalLogin from './components/ModalLogin';
 
 export default class App extends React.Component {
 
-  state = {
-    loginVisible: false,
-  };
-
   render() {
     return (
       <View style={styles.container}>
