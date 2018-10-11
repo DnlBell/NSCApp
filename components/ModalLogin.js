@@ -1,11 +1,12 @@
 import React from 'react';
-import { Modal, View, Text } from 'react-native';
+import { Modal, View, Text, TouchableHighlight } from 'react-native';
 import {connect} from 'react-redux';
 
 class ModalLogin extends React.Component {
+
     render() {
         return(
-        <Modal
+          <Modal
           animationType="slide"
           transparent={false}
           visible={this.props.loginVisible}
@@ -15,9 +16,10 @@ class ModalLogin extends React.Component {
           <View style={{marginTop: 22}}>
             <View>
               <Text>Hello World!</Text>
+
               <TouchableHighlight
                 onPress={() => {
-                  this.setModalVisible(!this.props.loginVisible);
+                  this.closeLogin();
                 }}>
                 <Text>Hide Modal</Text>
               </TouchableHighlight>
@@ -26,20 +28,18 @@ class ModalLogin extends React.Component {
         </Modal>
         )
     }
+}
 
+function mapStateToProps(state) {
+  return {
+      loginVisible: state.loginVisible
+  }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-      closeModalLogin : () => dispatch({type:'MODAL_LOGIN_CLOSE'})
+      closeLogin : () => dispatch({type:'LOGIN_CLOSE'})
     }
   }
   
-
-function mapStateToProps(state) {
-        return {
-            loginVisible: state.loginVisible
-        }
-}
-
-export default connect(mapStateToProps)(ModalLogin)
+export default connect(mapStateToProps,mapDispatchToProps)(ModalLogin)

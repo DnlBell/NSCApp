@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { View, Text } from 'react-native';
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
+import {connect} from 'react-redux';
 
 class DropMenu extends React.PureComponent {
   _menu = null;
@@ -18,6 +18,22 @@ class DropMenu extends React.PureComponent {
     this._menu.show();
   };
 
+  login = () => {
+    this._menu.hide();
+    this.props.showLogin();
+    alert('{this.props.loginVisible}')
+  };
+
+  home = () => {
+    this._menu.hide();
+    alert('you clicked home!');
+  };
+
+  register = () => {
+    this._menu.hide();
+    alert('you clicked register!');
+  };
+
   render() {
     return (
       <View style={{  flexDirection:'row',
@@ -30,9 +46,9 @@ class DropMenu extends React.PureComponent {
           ref={this.setMenuRef}
           button={<Text onPress={this.showMenu} >Mindspand</Text>}
         >
-          <MenuItem onPress={this.hideMenu}>Home</MenuItem>
-          <MenuItem onPress={this.hideMenu}>Login</MenuItem>
-          <MenuItem onPress={this.hideMenu}>Register</MenuItem>
+          <MenuItem onPress={this.home}>Home</MenuItem>
+          <MenuItem onPress={this.login}>Login</MenuItem>
+          <MenuItem onPress={this.register}>Register</MenuItem>
           <MenuDivider />
         </Menu>
       </View>
@@ -40,4 +56,16 @@ class DropMenu extends React.PureComponent {
   }
 }
 
-export default DropMenu;
+function mapStateToProps(state){
+  return {
+    loginVisible:state.loginVisible
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    showLogin: () => dispatch({type:'LOGIN_OPEN'})
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(DropMenu);
