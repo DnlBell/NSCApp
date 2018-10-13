@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 
@@ -7,9 +7,8 @@ import DropMenu from './components/DropMenu';
 import ModalLogin from './components/ModalLogin';
 
 const initialState = {
-  loginVisible: false,
+  loginVisible: false
 }
-
 
 const reducer = (state = initialState,action) => {
   switch(action.type){
@@ -23,7 +22,7 @@ const reducer = (state = initialState,action) => {
 
 const store = createStore(reducer)
 
-export default class App extends React.Component {
+export default class App extends Component {
 
   setModalVisible(visible) {
     this.setState({loginVisible: visible});
@@ -35,6 +34,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           <ModalLogin />
           <DropMenu />
+          
         </View>
       </Provider>
     );

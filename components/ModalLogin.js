@@ -19,7 +19,7 @@ class ModalLogin extends React.Component {
 
               <TouchableHighlight
                 onPress={() => {
-                  this.closeLogin();
+                  this.props.closeLogin();
                 }}>
                 <Text>Hide Modal</Text>
               </TouchableHighlight>
@@ -38,7 +38,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-      closeLogin : () => dispatch({type:'LOGIN_CLOSE'})
+      closeLogin : () => dispatch({type:'CLOSE_LOGIN'})
     }
   }
   

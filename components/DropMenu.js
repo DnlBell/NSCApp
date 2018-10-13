@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, {Component} from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 import {connect} from 'react-redux';
 
-class DropMenu extends React.PureComponent {
+class DropMenu extends Component {
   _menu = null;
 
   setMenuRef = ref => {
@@ -21,7 +21,6 @@ class DropMenu extends React.PureComponent {
   login = () => {
     this._menu.hide();
     this.props.showLogin();
-    alert('{this.props.loginVisible}')
   };
 
   home = () => {
@@ -35,13 +34,9 @@ class DropMenu extends React.PureComponent {
   };
 
   render() {
+
     return (
-      <View style={{  flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'flex-start',
-        paddingTop:30,
-        paddingLeft:15
-         }}>
+      <View style={styles.container}>
         <Menu
           ref={this.setMenuRef}
           button={<Text onPress={this.showMenu} >Mindspand</Text>}
@@ -56,6 +51,16 @@ class DropMenu extends React.PureComponent {
   }
 }
 
+const styles = StyleSheet.create({
+  container:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'flex-start',
+    paddingTop:30,
+    paddingLeft:15
+  }
+})
+
 function mapStateToProps(state){
   return {
     loginVisible:state.loginVisible
@@ -64,7 +69,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch) {
   return {
-    showLogin: () => dispatch({type:'LOGIN_OPEN'})
+    showLogin: () => dispatch({type:'OPEN_LOGIN'})
   }
 }
 
