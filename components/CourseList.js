@@ -22,10 +22,8 @@ class CourseList extends React.Component{
         .catch((error) => console.log(error))
     }
     renderCourses() {
-        return this.state.courses.map((course, index) => 
-        <View key={index} style={this.styles.boxes}>
-            <Text>{course.name}</Text>
-        </View>)
+        return this.state.courses.map((course, index) => <Text key={index}>{course.name}</Text>
+        )
         
         // return <Text>{this.state.courses.title}</Text>
     }
@@ -39,18 +37,18 @@ class CourseList extends React.Component{
         )
     }
 
-    styles = StyleSheet.create({
-        boxes: {
-            flex: 1,
-            flexDirection: 'column',
-            justifyContent: 'space-evenly',
-            height: 60,
-            width: 60,
-            backgroundColor: 'blue',
-            borderColor: 'black',
-            borderStyle: 'solid'
-        }
-    })
+    // styles = StyleSheet.create({
+    //     boxes: {
+    //         flex: 1,
+    //         flexDirection: 'column',
+    //         justifyContent: 'space-evenly',
+    //         height: 60,
+    //         width: 60,
+    //         backgroundColor: 'blue',
+    //         borderColor: 'black',
+    //         borderStyle: 'solid'
+    //     }
+    // })
 }
 
 export default CourseList;
