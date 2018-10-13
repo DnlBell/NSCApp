@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import DropMenu from './components/DropMenu';
 import ModalLogin from './components/ModalLogin';
+import CourseList from './components/CourseList';
 
 export default class App extends React.Component {
 
@@ -10,6 +11,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <DropMenu />
         <Text>Open up App.js to start working on your app! Dude.</Text>
+        <CourseList />
       </View>
     );
   }
