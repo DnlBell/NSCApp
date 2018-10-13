@@ -36,7 +36,6 @@ export default class App extends Component {
         <View style={styles.container}>
           <ModalLogin />
           <Landing />
-          <DropMenu />
           <CourseList />
         </View>
       </Provider>
