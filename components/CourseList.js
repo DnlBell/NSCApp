@@ -8,13 +8,13 @@ class CourseList extends React.Component{
        
     componentDidMount() {
         //  return fetch('https://bonzo.brainsplode.com:4001/mspnapi/course')
-        return fetch('https://swapi.co/api/people')
-        // return fetch('https://mspnapi.dolehesten.org')
+        // return fetch('https://swapi.co/api/people')
+        return fetch('https://mspnapi.dolehesten.org/mspnapi/course')
         .then((response) => response.json())
         .then((responseJson) => {
             console.log("This is responseJson: "+ responseJson)
             this.setState({
-                courses: responseJson.results
+                courses: responseJson
             }, function() {
 
             });
@@ -22,7 +22,7 @@ class CourseList extends React.Component{
         .catch((error) => console.log(error))
     }
     renderCourses() {
-        return this.state.courses.map((course, index) => <Text key={index}>{course.name}</Text>
+        return this.state.courses.map((course, index) => <Text key={index}>{course.title}</Text>
         )
         
         // return <Text>{this.state.courses.title}</Text>
