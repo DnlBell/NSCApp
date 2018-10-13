@@ -6,6 +6,7 @@ import {Provider} from 'react-redux'
 import Landing from './components/Landing'
 import DropMenu from './components/DropMenu';
 import ModalLogin from './components/ModalLogin';
+import CourseList from './components/CourseList';
 
 const initialState = {
   loginVisible: false
@@ -34,9 +35,15 @@ export default class App extends Component {
       <Provider store = {store}>
         <View style={styles.container}>
           <ModalLogin />
+<<<<<<< HEAD
           <Landing />
+=======
+          <DropMenu />
+          <CourseList />
+>>>>>>> 00ddf4b926b1a9589be71b2866bee6f83ec329bd
         </View>
       </Provider>
+
     );
   }
 }
