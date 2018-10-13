@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 
+import Landing from './components/Landing'
 import DropMenu from './components/DropMenu';
 import ModalLogin from './components/ModalLogin';
 
@@ -33,8 +34,7 @@ export default class App extends Component {
       <Provider store = {store}>
         <View style={styles.container}>
           <ModalLogin />
-          <DropMenu />
-          
+          <Landing />
         </View>
       </Provider>
     );
