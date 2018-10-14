@@ -3,7 +3,8 @@ import React, {Component} from 'react'
 import { View , Text, StyleSheet } from 'react-native'
 import LandingHeader from './LandingHeader'
 import CourseList from './CourseList'
-import MarketingBar from'./MarketingBar'
+import MarketingBar from './MarketingBar'
+import CategoriesCard from './CategoriesCard'
 
 
 
@@ -18,6 +19,16 @@ class Landing extends Component {
             <CourseList />
             <Text style = {styles.HighlightTitle}>Grow My Career</Text>
             <CourseList />
+            <CategoriesCard />
+            <CategoriesCard />
+            <CategoriesCard />
+            <CategoriesCard />
+            <CategoriesCard />
+            <CategoriesCard />
+            <CategoriesCard />
+            <CategoriesCard />
+            <CategoriesCard />
+            <CategoriesCard />
         </View>
         )
     }    
