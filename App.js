@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 
@@ -33,11 +33,11 @@ export default class App extends Component {
   render() {
     return (
       <Provider store = {store}>
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
           <ModalLogin />
           <Landing />
           <CourseList />
-        </View>
+        </ScrollView>
       </Provider>
 
     );
