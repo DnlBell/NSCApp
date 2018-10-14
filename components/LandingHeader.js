@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, TouchableHighlight, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 import DropMenu from './DropMenu';
 
 
@@ -15,9 +15,9 @@ class LandingHeader extends Component {
             </View>
             <TextInput style={styles.inputText}>cata</TextInput>
             <TextInput style={styles.inputText}>loc</TextInput>
-            <TouchableHighlight style={styles.searchButton}>
+            <TouchableOpacity style={styles.searchButton}>
                 <Text style={styles.seachButtonText}>Search</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
         </View>
         )
     }    

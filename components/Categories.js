@@ -28,17 +28,17 @@ class Categories extends React.Component{
             this.state.categoriesView.push(
                 <View key = {i}>        
                     <TouchableOpacity style = {styles.card}>
-                        <Text>{this.state.catagory[i]}</Text>
+                        <Text style ={styles.cardText}>{this.state.catagory[i]}</Text>
                     </TouchableOpacity>
                 </View>
             )
         }
-
     }
 
     render() {
         return(
             <View>
+                <Text style = {styles.text}>Explore Our Categories</Text>
                 {this.state.categoriesView}
             </View>
         )
@@ -48,12 +48,21 @@ class Categories extends React.Component{
 
 const styles = StyleSheet.create({
     card:{
-        backgroundColor: '#FF6622',
+        backgroundColor: '#5E5E5E',
         alignItems: 'center',
         marginTop: 16,
         marginLeft: 12,
         marginRight: 12,
         padding: 30
+    },
+    cardText:{
+        color:'#fff'
+    },
+    text:{
+        color:'#5E5E5E',
+        textAlign: 'center',
+        fontSize: 22,
+        margin: 16
     }
 })
 

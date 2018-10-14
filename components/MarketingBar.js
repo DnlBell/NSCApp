@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 class MarketingBar extends Component {
 
@@ -7,9 +7,9 @@ class MarketingBar extends Component {
         return(
             <View style={styles.container}>
                 <Text style={styles.marketingText}>Offer your own classes on Mindspand!</Text>
-                <TouchableHighlight style={styles.marketingButton}>
+                <TouchableOpacity style={styles.marketingButton}>
                     <Text>Learn more</Text>
-                </TouchableHighlight>
+                </TouchableOpacity>
             </View>
         )
     }
