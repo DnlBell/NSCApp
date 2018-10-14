@@ -4,8 +4,6 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import Landing from './components/Landing';
 import ModalLogin from './components/ModalLogin';
-import CourseList from './components/CourseList';
-import MarketingBar from'./components/MarketingBar';
 
 const initialState = {
   loginVisible: false
@@ -34,9 +32,7 @@ export default class App extends Component {
       <Provider store = {store}>
         <ScrollView style={styles.container}>
           <ModalLogin />
-          <Landing />
-          <MarketingBar />
-          <CourseList />
+          <Landing />          
         </ScrollView>
       </Provider>
 
