@@ -4,7 +4,7 @@ import { View , Text, StyleSheet } from 'react-native'
 import LandingHeader from './LandingHeader'
 import CourseList from './CourseList'
 import MarketingBar from './MarketingBar'
-import CategoriesCard from './CategoriesCard'
+import Categories from './Categories'
 
 
 
@@ -19,16 +19,7 @@ class Landing extends Component {
             <CourseList />
             <Text style = {styles.HighlightTitle}>Grow My Career</Text>
             <CourseList />
-            <CategoriesCard />
-            <CategoriesCard />
-            <CategoriesCard />
-            <CategoriesCard />
-            <CategoriesCard />
-            <CategoriesCard />
-            <CategoriesCard />
-            <CategoriesCard />
-            <CategoriesCard />
-            <CategoriesCard />
+            <Categories />
         </View>
         )
     }    

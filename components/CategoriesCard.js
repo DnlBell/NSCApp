@@ -1,19 +1,13 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-
-
-
 const CategoriesCard = () => {
     return(
-    
             <TouchableOpacity style = {styles.card}>
                 <Text>category</Text>
             </TouchableOpacity>
     );
 }
-    
-
 
 const styles = StyleSheet.create({
     card:{
