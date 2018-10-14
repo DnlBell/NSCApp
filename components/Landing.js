@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import { View, Text, TouchableHighlight, TextInput, StyleSheet } from 'react-native';
 import DropMenu from './DropMenu';
@@ -16,7 +17,7 @@ class Landing extends Component {
             <TextInput style={styles.inputText}>cata</TextInput>
             <TextInput style={styles.inputText}>loc</TextInput>
             <TouchableHighlight style={styles.searchButton}>
-                <Text>Search</Text>
+                <Text style={styles.seachButtonText}>Search</Text>
             </TouchableHighlight>
         </View>
         )
@@ -26,17 +27,19 @@ class Landing extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#D3D3D3'
+        backgroundColor: '#5E5E5E'
     },
     heroLine1: {
         flex: 1,
         flexDirection:'row',
+        color:'#fff',
         textAlign:'center',
         fontSize: 40,
     },
     heroLine2: {
         flex: 1,
         flexDirection:'row',
+        color:'#fff',
         textAlign:'center',
         fontSize: 40,
         fontWeight: 'bold'
@@ -57,21 +60,16 @@ const styles = StyleSheet.create({
     },
     searchButton : {
         backgroundColor: '#FF6622',
+        alignItems: 'center',
         marginBottom: 18,
         marginLeft: 12,
         marginRight: 12,
         padding: 18
     },
-    marketingBar: {
-        backgroundColor: '#FF6622',
-    },
-    marketingText:{
-
-    },
-    marketingButton: {
-        backgroundColor: '#fff',
+    seachButtonText: {
+        color:'#fff',
+        fontSize:24
     }
-
 })
 
 export default Landing

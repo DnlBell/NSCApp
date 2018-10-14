@@ -39,7 +39,7 @@ class DropMenu extends Component {
       <View style={styles.container}>
         <Menu
           ref={this.setMenuRef}
-          button={<Text onPress={this.showMenu} >Mindspand</Text>}
+          button={<Text onPress={this.showMenu} style={styles.text}>Mindspand</Text>}
         >
           <MenuItem onPress={this.home}>Home</MenuItem>
           <MenuItem onPress={this.login}>Login</MenuItem>
@@ -56,8 +56,12 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'flex-start',
-    paddingTop:30,
+    paddingTop:40,
     paddingLeft:15
+  },
+  text:{
+    fontSize:18,
+    color:'#fff',
   }
 })
 
