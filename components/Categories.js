@@ -24,11 +24,9 @@ class Categories extends React.Component{
             categoriesView : []
         }
 
-        
-        
         for(let i = 0; i < this.state.catagory.length; i++){
             this.state.categoriesView.push(
-                <View>        
+                <View key = {i}>        
                     <TouchableOpacity style = {styles.card}>
                         <Text>{this.state.catagory[i]}</Text>
                     </TouchableOpacity>
