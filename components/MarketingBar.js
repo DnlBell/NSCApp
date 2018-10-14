@@ -8,7 +8,7 @@ class MarketingBar extends Component {
             <View style={styles.container}>
                 <Text style={styles.marketingText}>Offer your own classes on Mindspand!</Text>
                 <TouchableHighlight style={styles.marketingButton}>
-                    <Text>Click here to learn more</Text>
+                    <Text>Learn more</Text>
                 </TouchableHighlight>
             </View>
         )
