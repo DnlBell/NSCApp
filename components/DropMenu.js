@@ -39,8 +39,7 @@ class DropMenu extends Component {
       <View style={styles.container}>
         <Menu
           ref={this.setMenuRef}
-          button={<Text onPress={this.showMenu} >Mindspand</Text>}
-        >
+          button={<Text onPress={this.showMenu} >Mindspand</Text>}>
           <MenuItem onPress={this.home}>Home</MenuItem>
           <MenuItem onPress={this.login}>Login</MenuItem>
           <MenuItem onPress={this.register}>Register</MenuItem>

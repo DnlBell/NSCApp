@@ -3,6 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 
+// For debugging code
+//import { NativeModules } from 'react-native';
+//NativeModules.DevSettings.setIsDebuggingRemotely(true);
+
 import DropMenu from './components/DropMenu';
 import ModalLogin from './components/ModalLogin';
 
