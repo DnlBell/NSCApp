@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet, Dimensions } from 'react-native';
-import { Constants } from 'expo';
+import { View, ScrollView, StyleSheet, Dimensions } from 'react-native';
+import CourseDetail from './CourseDetail';
 
 const { width } = Dimensions.get('window');
 const height = width * 0.8
@@ -23,7 +23,8 @@ class CourseList extends PureComponent{
         .catch((error) => console.log(error))
     }
     renderCourses() {
-        return this.state.courses.map((course, index) => <Text key={index} style={this.styles.boxes}>{course.title}</Text>
+        return this.state.courses.map((course) => 
+        <CourseDetail key={course.id} course={course}  />
         )
     }
 
@@ -34,7 +35,7 @@ class CourseList extends PureComponent{
                 <View style={this.styles.scrollContainer}>
                     <ScrollView
                     horizontal
-                    pagingEnabled
+                    // pagingEnabled
                     showsHorizontalScrollIndicator={true}>
                     {this.renderCourses()}
                     </ScrollView>
@@ -48,19 +49,8 @@ class CourseList extends PureComponent{
     styles = StyleSheet.create({
         scrollContainer: {
             height,
+            width
         },
-        boxes: {
-            width,
-            height
-            // flex: 1,
-            // flexDirection: 'column',
-            // justifyContent: 'space-evenly',
-            // height: 60,
-            // width: 60,
-            // backgroundColor: 'blue',
-            // borderColor: 'black',
-            // borderStyle: 'solid'
-        }
     })
 }
 
