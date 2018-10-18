@@ -4,7 +4,6 @@ import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 class Categories extends React.Component{
 
     constructor() {
-
         super()
         this.state = {
             catagory : [
