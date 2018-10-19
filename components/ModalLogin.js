@@ -15,15 +15,21 @@ const User = formModel.struct({
 });
 
 class ModalLogin extends Component {
+  constructor(props) {
+    super(props);
+    this.handler = this.handler.bind(this);
+  }
   // handle form submission
   handler() {
     // using the ref to grab the form value
     const formValues = this._form.getValue();
-    console.log('value', formValues);
+    console.log(formValues);
   }
 
     render() {
+      console.log('hei')
         return(
+        
           <Modal
           animationType="slide"
           transparent={false}
