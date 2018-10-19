@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
 // For debugging code
 //import { NativeModules } from 'react-native';
 //NativeModules.DevSettings.setIsDebuggingRemotely(true);
 import DropMenu from './components/DropMenu';
-import { StyleSheet, Text, ScrollView } from 'react-native';
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
+import { StyleSheet, Text, ScrollView, View } from 'react-native';
 import Landing from './components/Landing';
 import ModalLogin from './components/ModalLogin';
 
