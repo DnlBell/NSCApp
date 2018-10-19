@@ -34,9 +34,7 @@ class ModalLogin extends Component {
           animationType="slide"
           transparent={false}
           visible={this.props.loginVisible}
-          onRequestClose={() => {
-            Alert.alert('Modal has been closed.');
-          }}>
+          onRequestClose={() => {}}>
           <View style={{marginTop: 22}}>
          
             <View>
