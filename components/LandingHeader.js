@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
-import DropMenu from './DropMenu';
 
 
 class LandingHeader extends Component {
@@ -8,7 +7,6 @@ class LandingHeader extends Component {
     render () {
         return(
         <View style={styles.container}>
-            <DropMenu />
             <View style={styles.heroTextFrame}>
                 <Text style={styles.heroLine1}>Grow your Mind.</Text>
                 <Text style={styles.heroLine2}>Expand your World.</Text>

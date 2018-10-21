@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { Modal, View, Text, TouchableHighlight, StyleSheet, Button } from 'react-native';
-import {connect} from 'react-redux';
+import { View, Text, TouchableHighlight, StyleSheet, Button } from 'react-native';
 
 import formModel from 'tcomb-form-native';
 
@@ -14,7 +13,7 @@ const User = formModel.struct({
   password: formModel.String,
 });
 
-class ModalLogin extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.handler = this.handler.bind(this);
@@ -27,14 +26,7 @@ class ModalLogin extends Component {
   }
 
     render() {
-      console.log('hei')
         return(
-        
-          <Modal
-          animationType="slide"
-          transparent={false}
-          visible={this.props.loginVisible}
-          onRequestClose={() => {}}>
           <View style={{marginTop: 22}}>
          
             <View>
@@ -74,22 +66,10 @@ class ModalLogin extends Component {
               </TouchableHighlight>
             </View>
           </View>
-        </Modal>
         )
     }
-}
+};
 
-function mapStateToProps(state) {
-  return {
-      loginVisible: state.loginVisible
-  }
-}
-// dispatch action
-function mapDispatchToProps(dispatch) {
-    return {
-      closeLogin : () => dispatch({type:'CLOSE_LOGIN'})
-    }
-  }
   const styles = StyleSheet.create({
     container: {
       justifyContent: 'center',
@@ -103,4 +83,4 @@ function mapDispatchToProps(dispatch) {
     }
   });
 // export this 
-export default connect(mapStateToProps,mapDispatchToProps)(ModalLogin)
+export default Login;

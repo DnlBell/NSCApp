@@ -1,29 +1,10 @@
 import React, { Component } from 'react';
-import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-// For debugging code
-//import { NativeModules } from 'react-native';
-//NativeModules.DevSettings.setIsDebuggingRemotely(true);
-import DropMenu from './components/DropMenu';
 import { StyleSheet, Text, ScrollView, View } from 'react-native';
 import Landing from './components/Landing';
-import ModalLogin from './components/ModalLogin';
+import Login from './components/Login';
+import MenuBar from './components/MenuBar.js'
 
-const initialState = {
-  loginVisible: false
-}
-
-const reducer = (state = initialState,action) => {
-  switch(action.type){
-    case 'OPEN_LOGIN':
-      return{loginVisible: true}
-    case 'CLOSE_LOGIN':
-      return{loginVisible: false}
-  }
-  return state
-}
-
-const store = createStore(reducer)
 
 export default class App extends Component {
 
@@ -33,13 +14,12 @@ export default class App extends Component {
 
   render() {
     return (
-      <Provider store = {store}>
-        <ScrollView style={styles.container}>
-          <ModalLogin />
+      <View style={styles.container}>
+        <ScrollView style={styles.scrollView}>
           <Landing />          
         </ScrollView>
-      </Provider>
-
+        <MenuBar />
+      </View>
     );
   }
 }
@@ -49,4 +29,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff'
   },
+  scrollView: {
+    flex: 3,
+    backgroundColor: '#fff'
+  }
 });
