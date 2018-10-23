@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react'
-import { View , Text, StyleSheet } from 'react-native'
+import { ScrollView , Text, StyleSheet } from 'react-native'
 import LandingHeader from './LandingHeader'
 import CourseList from './CourseList'
 import MarketingBar from './MarketingBar'
@@ -12,7 +12,7 @@ class Landing extends Component {
 
     render () {
         return(
-        <View >
+        <ScrollView >
             <LandingHeader />
             <MarketingBar />
             <Text style = {styles.HighlightTitle}>Recently Added</Text>
@@ -20,7 +20,7 @@ class Landing extends Component {
             <Text style = {styles.HighlightTitle}>Grow My Career</Text>
             <CourseList />
             <Categories />
-        </View>
+        </ScrollView>
         )
     }    
 }
