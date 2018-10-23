@@ -1,51 +1,18 @@
 import * as React from 'react'
-import {
-  StatusBar,
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Text,
-} from 'react-native'
+import { StatusBar, StyleSheet } from 'react-native'
 import { Switch, Route, Redirect } from 'react-router'
-import { NativeRouter, Link } from 'react-router-native'
-import { Navigation, Card, Tabs, Tab, BottomNavigation } from 'react-router-navigation'
+import { NativeRouter } from 'react-router-native'
+import { Navigation, Card, Tab, BottomNavigation } from 'react-router-navigation'
 import Home from './components/Home.js'
 import Profile from './components/Profile.js'
 import Search from './components/Search.js'
 import Landing from './components/Landing.js'
 
-const PRIMARY_COLOR = 'rgb(226, 68, 68)'
-const SECONDARY_COLOR = 'rgb(226, 144, 68)'
-
 const styles = StyleSheet.create({
-  scene: {
-    flex: 1,
-    padding: 18,
-  },
-  tabs: {
-    backgroundColor: PRIMARY_COLOR,
-  },
   tab: {
     paddingTop: 10,
     opacity: 10,
-  },
-  indicator: {
-    backgroundColor: 'white',
-  },
-  button: {
-    alignSelf: 'flex-start',
-    marginTop: 10,
-    marginLeft: -8,
-    paddingVertical: 10,
-    paddingHorizontal: 18,
-    borderWidth: 1,
-    borderColor: 'grey',
-    borderRadius: 3,
-  },
-  strong: {
-    fontWeight: '700',
-    marginBottom: 10,
-  },
+  }
 })
 
 export default class App extends React.Component {
@@ -54,10 +21,7 @@ export default class App extends React.Component {
     card: {},
   }
 
-
-
-
-  renderThirdCard = contextRouter => {
+  renderTabs = contextRouter => {
     const { location, match } = contextRouter
     return (
       <Switch location={location}>
@@ -107,7 +71,7 @@ export default class App extends React.Component {
             titleStyle={navigation.titleStyle}
             backButtonTintColor={navigation.backButtonTintColor}
           >
-            <Card exact path="/" title="MindSpand" render={this.renderThirdCard} />
+            <Card exact path="/" title="MindSpand" render={this.renderTabs} />
           </Navigation>
         </React.Fragment>
       </NativeRouter>
