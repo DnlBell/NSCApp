@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, ImageBackground } from 'react-native';
+import { Text, ImageBackground, Button } from 'react-native';
 import Card from './Card';
+import { withRouter } from 'react-router-native';
 
 const CourseDetail = (props) => {
     return (
@@ -11,6 +12,7 @@ const CourseDetail = (props) => {
             imageStyle={{resizeMode:"stretch"}}
             >
                 <Text style={styles.textStyle}>{props.course.title}</Text>
+                <Button title="Details" onPress={() => props.history.push("/course", {id: props.course.id})}/>
             </ImageBackground>
             
         </Card>
@@ -34,4 +36,4 @@ const styles = {
     }
 }
 
-export default CourseDetail
+export default withRouter(CourseDetail);

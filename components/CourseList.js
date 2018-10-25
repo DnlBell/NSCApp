@@ -24,6 +24,7 @@ class CourseList extends PureComponent{
     }
     renderCourses() {
         return this.state.courses.map((course) => 
+        // console.log(course),
         <CourseDetail key={course.id} course={course}  />
         )
     }

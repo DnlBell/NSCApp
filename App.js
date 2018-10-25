@@ -7,6 +7,7 @@ import Home from './components/Home.js'
 import Profile from './components/Profile.js'
 import Search from './components/Search.js'
 import Landing from './components/Landing.js'
+import CoursePage from './components/CoursePage';
 
 const styles = StyleSheet.create({
   tab: {
@@ -64,6 +65,8 @@ export default class App extends React.Component {
     const { navigation, card } = this.state
     return (
       <NativeRouter>
+        <Switch>
+        <Route exact path={`/course`} component={CoursePage}/>
         <React.Fragment>
           <StatusBar barStyle={navigation.barStyle} />
           <Navigation
@@ -74,6 +77,7 @@ export default class App extends React.Component {
             <Card exact path="/" title="MindSpand" render={this.renderTabs} />
           </Navigation>
         </React.Fragment>
+        </Switch>
       </NativeRouter>
     )
   }
