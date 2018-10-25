@@ -3,7 +3,14 @@ North Seattle College App
 
 
 [![CircleCI](https://circleci.com/gh/NorthSeattleCollegeDreamTeam/NSCApp/tree/master.svg?style=svg)](https://circleci.com/gh/NorthSeattleCollegeDreamTeam/NSCApp/tree/master)
+- - - 
+
 [![codecov](https://codecov.io/gh/NorthSeattleCollegeDreamTeam/NSCApp/branch/master/graph/badge.svg)](https://codecov.io/gh/NorthSeattleCollegeDreamTeam/NSCApp)
+- - - 
+
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest) [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
+
+- - - 
 
 # MindSpand
 
