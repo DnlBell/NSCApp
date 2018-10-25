@@ -12,8 +12,9 @@ class MenuBar extends Component {
                     <Text>Search</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}>
-                    <Text>Profile</Text>
+                    <Text>asfsa</Text>
                 </TouchableOpacity>
+
             </View>
         )
     }

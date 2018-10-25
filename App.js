@@ -7,6 +7,7 @@ import Home from './components/Home.js'
 import Profile from './components/Profile.js'
 import Search from './components/Search.js'
 import Landing from './components/Landing.js'
+import Login from './components/Login.js';
 
 const styles = StyleSheet.create({
   tab: {
@@ -41,6 +42,11 @@ export default class App extends React.Component {
                 path={`${match.url}/home`}
                 label="Home"
                 component={Landing}
+              />
+               <Tab
+                path={`${match.url}/signin`}
+                label="signin"
+                component={Login}
               />
               <Tab
                 path={`${match.url}/profile`}

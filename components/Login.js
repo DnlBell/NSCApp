@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import { View, Text, TouchableHighlight, StyleSheet, Button } from 'react-native';
-
 import formModel from 'tcomb-form-native';
+import { Navigation } from 'react-navigation';
+import Profile from './Profile';
+import { StackNavigator, NavigationActions } from 'react-navigation';
 
+const profile = StackNavigator({
+  Profile: { screen: Profile }
+});
 
 // set up the form model
 const Form = formModel.form.Form;
@@ -13,6 +18,7 @@ const User = formModel.struct({
   password: formModel.String,
 });
 
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -22,14 +28,19 @@ class Login extends Component {
   handler() {
     // using the ref to grab the form value
     const formValues = this._form.getValue();
-    console.log(formValues);
+    var isEmpty = (formValues || []).length === 0;
+
+    if (isEmpty) {
+      alert("Please enter email and password");
+    } else {
+      alert("You've just signed in!");
+    }
+
   }
 
     render() {
-        return(
-          <View style={{marginTop: 22}}>
-         
-            <View>
+     return(
+          <View style={{marginTop: 5}}>
             <View style={styles.container}>
             <Text style={{paddingBottom:20}}>Sign in</Text>
             <View>
@@ -40,12 +51,12 @@ class Login extends Component {
             </View>
             <View>
             </View>
-            <View style={{marginTop:20, marginBottom:10}}>
+            <View style={{marginBottom:10}}>
                 <Button
                   title="with Google"
-                  color="lightblue"
+                  color=""
                 />
-                <Text style={{marginTop: 20, marginBottom:10,  textAlign: 'center',}}>OR</Text>
+                <Text style={{marginBottom:2,  textAlign: 'center',}}>OR</Text>
             </View>
                 <Form 
                   type={User}
@@ -54,18 +65,13 @@ class Login extends Component {
                 
                 <Button 
                   title="Login"
-                  onPress={this.handler}
+                   onPress={this.handler}
                   />
+
+
+            </View>
             </View>
 
-              <TouchableHighlight
-                onPress={() => {
-                  this.props.closeLogin();
-                }}>
-               <Text>Hide Modal</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
         )
     }
 };
@@ -73,13 +79,11 @@ class Login extends Component {
   const styles = StyleSheet.create({
     container: {
       justifyContent: 'center',
-      marginTop: 50,
-      padding: 20,
-      backgroundColor: '#ffffff',
+      marginTop: 5,
+      padding: 20
     },
     button: {
-      padding:20,
-      backgroundColor: 'blue'
+      padding:20
     }
   });
 // export this 

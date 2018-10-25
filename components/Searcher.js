@@ -8,8 +8,8 @@ export default class Searcher extends Component {
   render() {
     return (
       <View >
-        <TextInput style={styles.inputText}>cata</TextInput>
-        <TextInput style={styles.inputText}>loc</TextInput>
+        <TextInput style={styles.inputText} placeholder={'Category'}></TextInput>
+        <TextInput style={styles.inputText} placeholder={'Location'}></TextInput>
         <TouchableOpacity style={styles.searchButton}>
           <Text style={styles.seachButtonText}>Search</Text>
         </TouchableOpacity>
