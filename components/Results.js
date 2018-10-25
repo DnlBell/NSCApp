@@ -6,7 +6,7 @@ export default class Results extends Component {
   render() {
     return (
         <View style={styles.container}>
-            
+            <Text>Results</Text>
         </View>
     );
   }
@@ -16,6 +16,9 @@ export default class Results extends Component {
 
 const styles = StyleSheet.create({
     container:{
-      flex:1,
+        flex:1,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center'
     }
 });
