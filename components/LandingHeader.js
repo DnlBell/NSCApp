@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import Searcher from './Searcher';
 
 
 class LandingHeader extends Component {
@@ -11,11 +12,7 @@ class LandingHeader extends Component {
                 <Text style={styles.heroLine1}>Grow your Mind.</Text>
                 <Text style={styles.heroLine2}>Expand your World.</Text>
             </View>
-            <TextInput style={styles.inputText}>cata</TextInput>
-            <TextInput style={styles.inputText}>loc</TextInput>
-            <TouchableOpacity style={styles.searchButton}>
-                <Text style={styles.seachButtonText}>Search</Text>
-            </TouchableOpacity>
+            <Searcher />
         </View>
         )
     }    
@@ -28,14 +25,12 @@ const styles = StyleSheet.create({
     },
     heroLine1: {
         flex: 1,
-        flexDirection:'row',
         color:'#fff',
         textAlign:'center',
         fontSize: 40,
     },
     heroLine2: {
         flex: 1,
-        flexDirection:'row',
         color:'#fff',
         textAlign:'center',
         fontSize: 40,
@@ -48,7 +43,6 @@ const styles = StyleSheet.create({
         padding: 20
     },
     inputText: {
-        flexDirection:'row',
         backgroundColor: '#fff',
         marginBottom: 8,
         marginLeft: 12,
@@ -69,4 +63,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default LandingHeader
+export default LandingHeader;
