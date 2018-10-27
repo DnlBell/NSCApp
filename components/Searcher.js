@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Dimensions } from "react-native";
 
-var width = Dimensions.get('window').width;
+var width = Dimensions.get('window').width - 18;
 
 export default class Searcher extends Component {
   render() {
     return (
-      <View >
+      <View>
         <TextInput style={styles.inputText}>cata</TextInput>
         <TextInput style={styles.inputText}>loc</TextInput>
         <TouchableOpacity style={styles.searchButton}>
@@ -23,7 +23,7 @@ inputText: {
   backgroundColor: '#fff',
   marginBottom: 8,
   marginLeft: 9,
-  width: width-18,
+  width: width,
   padding: 18
 },
 searchButton : {
@@ -31,7 +31,7 @@ searchButton : {
   alignItems: 'center',
   marginBottom: 30,
   marginLeft: 9,
-  width: width-18,
+  width: width,
   padding: 18
 },
 seachButtonText: {

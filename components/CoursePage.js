@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, ScrollView, Text, Button } from 'react-native';
 import { withRouter } from 'react-router-native';
+import Footer from './Footer';
 
 class CoursePage extends Component{
     state = {course : {}};
@@ -20,11 +21,14 @@ class CoursePage extends Component{
 
     render() {
         return (
-            <View style={styles.pageContainer}>
-                <Text>Course Page!</Text>
-                <Text>Course Title: {this.state.course.title}</Text>
-                <Text>Vendor: {this.state.course.vendorName}</Text>
-                <Button title="Home" onPress={() => this.props.history.push("/")}/>
+            <View style= {{flex:1}}>
+                <ScrollView >
+                    <Text>Course Page!</Text>
+                    <Text>Course Title: {this.state.course.title}</Text>
+                    <Text>Vendor: {this.state.course.vendorName}</Text>
+                    <Button title="Home" onPress={() => this.props.history.push("/")}/>
+                </ScrollView>
+                    <Footer />
             </View>
         )
     }
@@ -44,8 +48,7 @@ class CoursePage extends Component{
 
 const styles = {
     pageContainer: {
-        justifyContent: 'center',
-        alignItems: 'center'
+       flex:1
     }
 }
 
