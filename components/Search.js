@@ -1,18 +1,17 @@
+//package imports
 import React, { Component } from 'react';
-import { Text, View, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
-import { Dimensions } from "react-native";
-
+import { View, ScrollView } from 'react-native';
+//app imports
+import Header from './Header';
 import Searcher from './Searcher';
 import Footer from './Footer';
-
-var width = Dimensions.get('window').width;
-
 
 class Search extends Component {
   render() {
     return (
     <View style={{flex:1}}>
       <ScrollView>
+        <Header />
         <Searcher />
       </ScrollView>
       <Footer />
@@ -20,11 +19,6 @@ class Search extends Component {
     );
   }
 };
-
-const styles = StyleSheet.create({
-    
-});
-
 
 export default Search;
 

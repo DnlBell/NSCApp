@@ -3,18 +3,15 @@ import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-nativ
 import Searcher from './Searcher';
 
 
-class LandingHeader extends Component {
+class Header extends Component {
 
     render () {
         return(
         <View style={styles.head}>
-        <View style={styles.heroTextFrame}>
-            <Text style={styles.heroLine1}>Grow your Mind.</Text>
-            <Text style={styles.heroLine2}>Expand your World.</Text>
-        </View>
-        <View style={styles.heroTextFrame}>
-            <Searcher />
-        </View>
+            <View style={styles.heroTextFrame}>
+                <Text style={styles.heroLine1}>Grow your Mind.</Text>
+                <Text style={styles.heroLine2}>Expand your World.</Text>
+            </View>
         </View>
         )
     }    
@@ -23,6 +20,8 @@ class LandingHeader extends Component {
 const styles = StyleSheet.create({
     head: {
         flex: 1,
+        paddingTop:18,
+        paddingBottom:18,
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
@@ -46,4 +45,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default LandingHeader;
+export default Header;

@@ -5,25 +5,24 @@ import { Link } from 'react-router-native';
 var screenWidth = Dimensions.get('window').width;
 
 class Footer extends Component {
-
     render(){
         return (
             <View style={styles.navBar}>
-                <View>
-                    <Link to="/" underlayColor="#f0f4f7" >
+                <Link to="/" underlayColor="#f0f4f7" >
+                    <View style={styles.navButton}>
                         <Text>Home</Text>
-                    </Link>
-                </View>
-                <View>
-                    <Link to="/search" underlayColor="#f0f4f7" >
+                    </View>
+                </Link>                
+                <Link to="/search" underlayColor="#f0f4f7" >
+                    <View style={styles.navButton}>
                         <Text>Search</Text>
-                    </Link>
-                </View>
-                <View>
-                    <Link to="/profile" underlayColor="#f0f4f7" >
+                    </View>
+                </Link>                
+                <Link to="/profile" underlayColor="#f0f4f7" >
+                    <View style={styles.navButton}>
                         <Text>Profile</Text>
-                    </Link>
-                </View>
+                    </View>
+                </Link>                
             </View>
         )
     }
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
         width:screenWidth
     },
     navButton:{
-
+        padding:18
     }
 
 

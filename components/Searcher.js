@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Dimensions } from "react-native";
+import { Link } from 'react-router-native';
 
 var width = Dimensions.get('window').width - 18;
 
@@ -10,9 +11,9 @@ export default class Searcher extends Component {
       <View>
         <TextInput style={styles.inputText}>cata</TextInput>
         <TextInput style={styles.inputText}>loc</TextInput>
-        <TouchableOpacity style={styles.searchButton}>
+        <Link to = "/results" component={TouchableOpacity} style={styles.searchButton}>
           <Text style={styles.seachButtonText}>Search</Text>
-        </TouchableOpacity>
+        </Link>
       </View>
     );
   }

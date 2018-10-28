@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
-
+import { Text, View, ScrollView, StyleSheet } from 'react-native';
+import Footer from './Footer'; 
+import Header from './Header';
 
 export default class Results extends Component {
   render() {
     return (
         <View style={styles.container}>
-            <Text>Results</Text>
+            <ScrollView>
+                <Header/>
+                <Text>Results</Text>
+            </ScrollView>
+            <Footer/>
         </View>
     );
   }
 };
 
-
-
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'center'
     }
 });

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { ScrollView , View, Text, StyleSheet } from 'react-native'
-import LandingHeader from './LandingHeader'
+import Header from './Header'
 import CourseList from './CourseList'
 import MarketingBar from './MarketingBar'
 import Categories from './Categories'
@@ -12,7 +12,7 @@ class Landing extends Component {
         return(
         <View style={{flex: 1}}>
             <ScrollView>
-                <LandingHeader />
+                <Header />
                 <MarketingBar />
                 <Text style = {styles.HighlightTitle}>Recently Added</Text>
                 <CourseList />
