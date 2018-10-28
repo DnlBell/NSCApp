@@ -22,10 +22,7 @@ const styles = StyleSheet.create({
 inputText: {
   backgroundColor: '#fff',
   marginBottom: 8,
-<<<<<<< HEAD
-=======
   marginLeft: 9,
->>>>>>> 61edecb37430f5e3ff9a31aab20401a6bea2f7ea
   width: width,
   padding: 18
 },
@@ -33,10 +30,7 @@ searchButton : {
   backgroundColor: '#FF6622',
   alignItems: 'center',
   marginBottom: 30,
-<<<<<<< HEAD
-=======
   marginLeft: 9,
->>>>>>> 61edecb37430f5e3ff9a31aab20401a6bea2f7ea
   width: width,
   padding: 18
 },
