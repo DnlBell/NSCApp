@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { Dimensions } from "react-native";
 
 import Searcher from './Searcher';
+import Footer from './Footer';
+
+var width = Dimensions.get('window').width;
 
 
-export default class Search extends Component {
+class Search extends Component {
   render() {
     return (
-    <View style={styles.searcherBox}>
-     <Searcher />
+    <View style={{flex:1}}>
+      <ScrollView>
+        <Searcher />
+      </ScrollView>
+      <Footer />
     </View>
     );
   }
 };
 
-
-
 const styles = StyleSheet.create({
-    searcherBox:{
-      flex:1,
-      flexDirection:'row',
-      alignItems:'center',
-      justifyContent:'center'
-    }
+    
 });
+
+
+export default Search;
+
