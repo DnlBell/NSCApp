@@ -1,19 +1,37 @@
 import React, { Component } from 'react';
 import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Dimensions } from "react-native";
-import { Link } from 'react-router-native';
+import { withRouter } from 'react-router-native';
 
 var width = Dimensions.get('window').width - 18;
 
-export default class Searcher extends Component {
+class Searcher extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      keyword: '',
+      location: ''
+    }
+  }
   render() {
     return (
       <View>
-        <TextInput style={styles.inputText}>cata</TextInput>
-        <TextInput style={styles.inputText}>loc</TextInput>
-        <Link to = "/results" component={TouchableOpacity} style={styles.searchButton}>
-          <Text style={styles.seachButtonText}>Search</Text>
-        </Link>
+        <TextInput 
+          style={styles.inputText}
+          placeholder="What do you want to learn?"
+          onChangeText={(keyword) => this.setState({keyword})}
+        />
+          <TextInput 
+          style={styles.inputText}
+          placeholder="Where are you?"
+          onChangeText={(location) => this.setState({location})}
+        />
+        <TouchableOpacity 
+          onPress = {() => this.props.history.push("/results", {keyword:this.state.keyword, location:this.state.location})}
+          style = {styles.searchButton}
+        >
+          <Text>Search</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -40,3 +58,5 @@ seachButtonText: {
   fontSize:24
 },
 });
+
+export default withRouter(Searcher);
