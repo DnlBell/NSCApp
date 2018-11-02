@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router';
 import { NativeRouter } from 'react-router-native';
 
 
+import Dummy from './components/Dummy/Dummy';
 import Profile from './components/Profile.js';
 import Search from './components/Search.js';
 import Landing from './components/Landing.js';
@@ -17,10 +18,15 @@ export default class App extends React.Component {
       <NativeRouter>
             <Switch>
                 <Route exact path="/" component={Landing} />
-                <Route path="/course" component={CoursePage} />
                 <Route path="/search" component={Search} />
-                <Route path="/profile" component={Profile} />
-                <Route path="/results" component={Results} />
+                <Route path="/course" component={CoursePage} />
+                <Route path="/course/purchase" component={Dummy} />
+
+                <Route path="/login" component={Dummy} />
+                <Route path="/profile" component={Dummy} />
+
+                <Route path="/about" component={Profile} />
+                <Route path="/contact" component={Dummy} />
             </Switch>          
       </NativeRouter>
     )
