@@ -2,26 +2,32 @@ import * as React from 'react';
 import { Switch, Route } from 'react-router';
 import { NativeRouter } from 'react-router-native';
 
-
+import Dummy from './components/Dummy/Dummy.js';
 import Profile from './components/Profile.js';
 import Search from './components/Search.js';
 import Landing from './components/Landing.js';
 import CoursePage from './components/CoursePage';
 import Results from './components/Results';
 
+// import getStore from './getStore';
+// const store = getStore();                   // this is the combined state (redux store)
 
 export default class App extends React.Component {
-  
   render() {
     return (
       <NativeRouter>
             <Switch>
                 <Route exact path="/" component={Landing} />
-                <Route path="/course" component={CoursePage} />
                 <Route path="/search" component={Search} />
+                <Route path="/course" component={CoursePage} />
+                <Route path="/course/purchase" component={Dummy} />
+
+                <Route path="/login" component={Dummy} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/results" component={Results} />
-            </Switch>          
+
+                <Route path="/about" component={Dummy} />
+                <Route path="/contact" component={Dummy} />
+            </Switch>
       </NativeRouter>
     )
   };
