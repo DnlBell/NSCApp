@@ -1,8 +1,7 @@
 // searchReducer.js
-// Holds current filter and search results
+// Holds current current cart, filter and search results
 
-
-export const authReducer = (state = {filter: {}, results: []}, {filter, results}) => {
+export const searchReducer = (state = {filter: {}, results: []}, {filter, results}) => {
     if (type === 'SEARCH_RESULTS') {
         // state = unionWith(state, {username, token};
         }
@@ -20,6 +19,5 @@ export const authReducer = (state = {filter: {}, results: []}, {filter, results}
         }
 
         return state;
-    )
 };
 
