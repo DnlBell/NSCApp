@@ -10,17 +10,17 @@ class Footer extends Component {
             <View style={styles.navBar}>
                 <Link to="/" underlayColor="#f0f4f7" >
                     <View style={styles.navButton}>
-                        <Text>Home</Text>
+                        <Text style={styles.navText}>Home</Text>
                     </View>
                 </Link>                
                 <Link to="/search" underlayColor="#f0f4f7" >
                     <View style={styles.navButton}>
-                        <Text>Search</Text>
+                        <Text style={styles.navText}>Search</Text>
                     </View>
                 </Link>                
                 <Link to="/profile" underlayColor="#f0f4f7" >
                     <View style={styles.navButton}>
-                        <Text>Profile</Text>
+                        <Text style={styles.navText}>Profile</Text>
                     </View>
                 </Link>                
             </View>
@@ -33,10 +33,14 @@ const styles = StyleSheet.create({
         alignSelf:'flex-end',
         justifyContent:'space-evenly',
         flexDirection: 'row',
-        width:screenWidth
+        width:screenWidth,
+        backgroundColor: '#FF6622',
     },
     navButton:{
         padding:18
+    },
+    navText: {
+        color: '#fff'
     }
 
 
