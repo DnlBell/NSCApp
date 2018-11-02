@@ -20,7 +20,8 @@ export default class App extends React.Component {
                 <Route exact path="/" component={Landing} />
                 <Route path="/search" component={Search} />
                 <Route path="/course" component={CoursePage} />
-                <Route path="/course/purchase" component={Dummy} />
+                <Route path="/cart" component={Dummy} />
+                <Route path="/cart/purchaseConfirm" component={Dummy} />
 
                 <Route path="/login" component={Dummy} />
                 <Route path="/profile" component={Dummy} />
