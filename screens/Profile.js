@@ -1,17 +1,19 @@
 //Package imports
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Image, TextInput } from 'react-native';
+import { Text, View, ScrollView, Image, TextInput, TouchableOpacity } from 'react-native';
+import { Dimensions } from "react-native";
+import { withRouter } from 'react-router-native';
+
 import LabeledInput from '../components/LabeledInput';
+
 
 //Component imports
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Login from './Login';
 
+var width = Dimensions.get('window').width - 18;
 
-
-
-const Profile = () => {
+const Profile = (props) => {
 
   const {viewStyle, imageStyle, textStyle } = styles;
 
@@ -79,7 +81,12 @@ const Profile = () => {
           showsHorizontalScrollIndicator={true}>
           
         </ScrollView>
-        <Login />
+        <TouchableOpacity 
+          onPress = {() => props.history.push("/login")}
+          style = {styles.loginButton}
+        >
+          <Text style = {styles.loginButtonText}>Login</Text>
+        </TouchableOpacity>
       </ScrollView>
       <Footer />
     </View>
@@ -105,6 +112,19 @@ const styles = {
     fontWeight: 'bold',
     alignSelf: 'center'
   },
+
+  loginButton : {
+    backgroundColor: '#FF6622',
+    alignItems: 'center',
+    marginBottom: 30,
+    marginLeft: 9,
+    width: width,
+    padding: 18
+  },
+  loginButtonText: {
+    color:'#fff',
+    fontSize:24
+  }
 }
 
-export default Profile;
+export default withRouter(Profile);

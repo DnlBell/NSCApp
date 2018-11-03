@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
-import { View, Text, TouchableHighlight, StyleSheet, Button } from 'react-native';
+import { View, ScrollView, Text, TouchableHighlight, StyleSheet, Button } from 'react-native';
+import { Dimensions } from "react-native";
 
 import formModel from 'tcomb-form-native';
 
+import Header from '../components/Header';
 
+
+var width = Dimensions.get('window').width - 18;
 // set up the form model
 const Form = formModel.form.Form;
 
@@ -45,11 +49,10 @@ class Login extends Component {
 
     render() {
         return(
-          <View style={{marginTop: 22}}>
-         
+          <ScrollView >
+            <Header />
             <View>
             <View style={styles.container}>
-            <Text style={{paddingBottom:20}}>Sign in</Text>
             <View>
                 <Button
                   title="with Facebook"
@@ -75,15 +78,8 @@ class Login extends Component {
                   onPress={this.handler}
                   />
             </View>
-
-              <TouchableHighlight
-                onPress={() => {
-                  this.props.closeLogin();
-                }}>
-               <Text>Hide Modal</Text>
-              </TouchableHighlight>
             </View>
-          </View>
+          </ScrollView>
         )
     }
 };
