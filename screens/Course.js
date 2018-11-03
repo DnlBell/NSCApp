@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { View, ScrollView, Text, Button } from 'react-native';
 import { withRouter } from 'react-router-native';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
 class Course extends Component{
     state = {course : {}};

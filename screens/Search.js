@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 //app imports
-import Header from './Header';
-import Searcher from './Searcher';
-import Footer from './Footer';
+import Header from '../components/Header';
+import Searcher from '../components/Searcher';
+import Footer from '../components/Footer';
 
 class Search extends Component {
   render() {

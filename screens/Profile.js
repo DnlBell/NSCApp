@@ -1,11 +1,11 @@
 //Package imports
 import React, { Component } from 'react';
 import { Text, View, ScrollView, Image, TextInput } from 'react-native';
-import LabeledInput from './LabeledInput';
+import LabeledInput from '../components/LabeledInput';
 
 //Component imports
-import Footer from './Footer';
-import Header from './Header';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 
 

@@ -3,7 +3,7 @@ import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Switch, Route, Redirect, Router } from 'react-router';
 import { NativeRouter, Link } from 'react-router-native';
 
-import Profile from './screeens/Profile.js';
+import Profile from './screens/Profile.js';
 import Search from './screens/Search.js';
 import Landing from './screens/Landing.js';
 import Course from './screens/Course.js';
@@ -11,6 +11,7 @@ import Cart from './screens/Cart.js';
 import Filter from './screens/Filter.js';
 import Purchase from './screens/Filter.js';
 import Login from './screens/Login.js';
+import Results from './screens/Results.js';
 
 /**
  * This stores the root mapping for the entire project. When adding a new page
