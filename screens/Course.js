@@ -23,10 +23,12 @@ class Course extends Component{
         return (
             <View style= {{flex:1}}>
                 <ScrollView >
-                    <Text>Course Page!</Text>
-                    <Text>Course Title: {this.state.course.title}</Text>
-                    <Text>Vendor: {this.state.course.vendorName}</Text>
-                    <Button title="Home" onPress={() => this.props.history.push("/")}/>
+                    <View style={styles.contentContainer}>
+                        <Text>Course Page!</Text>
+                        <Text>Course Title: {this.state.course.title}</Text>
+                        <Text>Vendor: {this.state.course.vendorName}</Text>
+                        <Button title="Home" onPress={() => this.props.history.push("/")}/>
+                    </View>
                 </ScrollView>
                     <Footer />
             </View>
@@ -49,6 +51,11 @@ class Course extends Component{
 const styles = {
     pageContainer: {
        flex:1
+    },
+    contentContainer: {
+        justifyContent: "center",
+        alignItems: "center",
+        paddingTop: 10
     }
 }
 
