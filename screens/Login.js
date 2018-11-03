@@ -18,11 +18,29 @@ class Login extends Component {
     super(props);
     this.handler = this.handler.bind(this);
   }
+  
+  // componentDidMount() {
+
+  // }
   // handle form submission
   handler() {
     // using the ref to grab the form value
     const formValues = this._form.getValue();
     console.log(formValues);
+
+    return fetch('https://mspnapi.dolehesten.org/auth/signup', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        uid: formValues.email,
+        pwd: formValues.password
+      })
+    }).then((response) => response.json()).then((data)=>console.log(data.token)).catch((error) => {
+      console.log(error);
+    })
   }
 
     render() {

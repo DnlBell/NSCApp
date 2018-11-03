@@ -5,14 +5,14 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 export default ({ location }) =>(
-            <View style={styles.container}>
-                <ScrollView>
-                    <Header/>
-                    <Text>Cart</Text>
-                </ScrollView>
-                <Footer/>
-            </View>
-        );
+    <View style={styles.container}>
+        <ScrollView>
+            <Header/>
+            <Text>Cart</Text>
+        </ScrollView>
+        <Footer/>
+    </View>
+);
 
 
 const styles = StyleSheet.create({
