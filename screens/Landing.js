@@ -1,10 +1,11 @@
-import React, {Component} from 'react'
-import { ScrollView , View, Text, StyleSheet } from 'react-native'
-import Header from '../components/Header'
-import CourseList from '../components/CourseList'
-import MarketingBar from '../components/MarketingBar'
-import Categories from '../components/Categories'
-import Footer from '../components/Footer'
+import React, {Component} from 'react';
+import { ScrollView , View, Text, StyleSheet } from 'react-native';
+import Header from '../components/Header';
+import CourseList from '../components/CourseList';
+import MarketingBar from '../components/MarketingBar';
+import Categories from '../components/Categories';
+import Footer from '../components/Footer';
+import Searcher from '../components/Searcher';
 
 class Landing extends Component {
 
@@ -13,6 +14,9 @@ class Landing extends Component {
         <View style={{flex: 1}}>
             <ScrollView>
                 <Header />
+                <View style={styles.searcherFrame}>
+                    <Searcher />
+                </View>
                 <MarketingBar />
                 <Text style = {styles.HighlightTitle}>Recently Added</Text>
                 <CourseList />
@@ -33,6 +37,9 @@ const styles = StyleSheet.create({
         fontSize: 22,
         margin: 16
     },
+    searcherFrame: {
+        backgroundColor: '#5E5E5E'
+    }
   });
 
 
