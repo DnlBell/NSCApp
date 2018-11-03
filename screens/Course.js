@@ -3,7 +3,7 @@ import { View, ScrollView, Text, Button } from 'react-native';
 import { withRouter } from 'react-router-native';
 import Footer from './Footer';
 
-class CoursePage extends Component{
+class Course extends Component{
     state = {course : {}};
 
     componentDidMount(){
@@ -52,4 +52,4 @@ const styles = {
     }
 }
 
-export default withRouter(CoursePage);
+export default withRouter(Course);

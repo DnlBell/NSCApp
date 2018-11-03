@@ -30,7 +30,7 @@ class Searcher extends Component {
           onPress = {() => this.props.history.push("/results", {keyword:this.state.keyword, location:this.state.location})}
           style = {styles.searchButton}
         >
-          <Text>Search</Text>
+          <Text style = {styles.seachButtonText}>Search</Text>
         </TouchableOpacity>
       </View>
     );
