@@ -1,12 +1,20 @@
 import React, {Component} from 'react';
-import { View, ScrollView, Text, Button } from 'react-native';
+import { View, ScrollView, Text, Button, Image, TouchableHighlight } from 'react-native';
 import { withRouter } from 'react-router-native';
 import Footer from '../components/Footer';
 
 class Course extends Component{
-    state = {course : {}};
+    state = {
+        course : {},
+        status: false
+};
+    toggleStatus(){
+        this.setState({
+          status:!this.state.status
+        });
+      }
 
-    componentDidMount(){
+    componentWillMount(){
         return fetch('https://mspnapi.dolehesten.org/mspnapi/course/'+this.props.location.state.id)
         .then((response) => response.json())
         .then((responseJson) => {
@@ -18,16 +26,29 @@ class Course extends Component{
         })
         .catch((error) => console.log(error))
     }
+    setPrice(){
+        let dollars = this.state.course.price/100.00;
+        return "$ " + parseFloat(Math.round(dollars * 100) / 100).toFixed(2);;
+    }
 
     render() {
         return (
             <View style= {{flex:1}}>
                 <ScrollView >
                     <View style={styles.contentContainer}>
-                        <Text>Course Page!</Text>
-                        <Text>Course Title: {this.state.course.title}</Text>
+                        <Text>{this.state.course.title}</Text>
                         <Text>Vendor: {this.state.course.vendorName}</Text>
+                        {/* <Image style={{width: 60, height: 60}} source={{uri: this.state.course.images[0]}} /> */}
+                        <Text>{JSON.stringify(this.state.course.images)}</Text>
+                        <Text>Price: {this.setPrice()}</Text>
+                        <Text>Rating: {this.state.course.rating}</Text>
+                        <Text>Description: {this.state.course.description}</Text>
                         <Button title="Home" onPress={() => this.props.history.push("/")}/>
+
+                        <TouchableHighlight onPress={()=>this.toggleStatus()}>
+                            <Text>More Details</Text>
+                        </TouchableHighlight>
+                        {this.state.status ? <Text>Some Details</Text>: null}
                     </View>
                 </ScrollView>
                     <Footer />
@@ -37,17 +58,6 @@ class Course extends Component{
 
 }
 
-// const CoursePage = (props) => {
-//     return (
-//         <View style={styles.pageContainer}>
-//             <Text>Course Page!</Text>
-//             <Text>{JSON.stringify(props.location.state)}</Text>
-//             <Button title="Home" onPress={() => props.history.push("/")}/>
-//         </View>
-//     )
-
-// }
-
 const styles = {
     pageContainer: {
        flex:1
@@ -55,7 +65,7 @@ const styles = {
     contentContainer: {
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: 10
+        paddingTop: 20
     }
 }
 
