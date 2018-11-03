@@ -6,6 +6,7 @@ import LabeledInput from '../components/LabeledInput';
 //Component imports
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Login from './Login';
 
 
 
@@ -78,7 +79,7 @@ const Profile = () => {
           showsHorizontalScrollIndicator={true}>
           
         </ScrollView>
-
+        <Login />
       </ScrollView>
       <Footer />
     </View>
