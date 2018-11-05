@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
-import { View, Text, TouchableHighlight, StyleSheet, Button } from 'react-native';
+import { View, ScrollView, Text, TouchableHighlight, StyleSheet, Button } from 'react-native';
+import { Dimensions } from "react-native";
 
 import formModel from 'tcomb-form-native';
 
+import Header from '../components/Header';
 
+
+var width = Dimensions.get('window').width - 18;
 // set up the form model
 const Form = formModel.form.Form;
 
@@ -18,20 +22,37 @@ class Login extends Component {
     super(props);
     this.handler = this.handler.bind(this);
   }
+  
+  // componentDidMount() {
+
+  // }
   // handle form submission
   handler() {
     // using the ref to grab the form value
     const formValues = this._form.getValue();
     console.log(formValues);
+
+    return fetch('https://mspnapi.dolehesten.org/auth/signup', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        uid: formValues.email,
+        pwd: formValues.password
+      })
+    }).then((response) => response.json()).then((data)=>console.log(data.token)).catch((error) => {
+      console.log(error);
+    })
   }
 
     render() {
         return(
-          <View style={{marginTop: 22}}>
-         
+          <ScrollView >
+            <Header />
             <View>
             <View style={styles.container}>
-            <Text style={{paddingBottom:20}}>Sign in</Text>
             <View>
                 <Button
                   title="with Facebook"
@@ -57,15 +78,8 @@ class Login extends Component {
                   onPress={this.handler}
                   />
             </View>
-
-              <TouchableHighlight
-                onPress={() => {
-                  this.props.closeLogin();
-                }}>
-               <Text>Hide Modal</Text>
-              </TouchableHighlight>
             </View>
-          </View>
+          </ScrollView>
         )
     }
 };

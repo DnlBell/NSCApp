@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
-import Searcher from './Searcher';
-
+import { View, Text, StyleSheet } from 'react-native';
+import styles from '../styles/Header'
 
 class Header extends Component {
 
@@ -16,33 +15,5 @@ class Header extends Component {
         )
     }    
 }
-
-const styles = StyleSheet.create({
-    head: {
-        flex: 1,
-        paddingTop:18,
-        paddingBottom:18,
-        flexDirection:'column',
-        alignItems:'center',
-        justifyContent:'center',
-        backgroundColor: '#5E5E5E'
-    },
-    heroLine1: {
-        color:'#fff',
-        fontSize: 40,
-    },
-    heroLine2: {
-        color:'#fff',
-        fontSize: 40,
-        fontWeight: 'bold'
-    },
-    heroTextFrame: {
-        flex: 1,
-        alignItems:'center',
-        justifyContent:'center',
-        marginTop: 20,
-        marginBottom: 20
-    }
-})
 
 export default Header;
