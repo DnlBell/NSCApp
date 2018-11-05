@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import { Switch, Route, Redirect, Router } from 'react-router';
-import { NativeRouter, Link } from 'react-router-native';
+import { Switch, Route } from 'react-router';
+import { NativeRouter } from 'react-router-native';
 
 import Profile from './screens/Profile.js';
 import Search from './screens/Search.js';
@@ -18,7 +17,6 @@ import Results from './screens/Results.js';
  * add it to the route list here.
  */
 export default class App extends React.Component {
-  
   render() {
     return (
       <NativeRouter>

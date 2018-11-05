@@ -14,9 +14,7 @@ class Landing extends Component {
         <View style={{flex: 1}}>
             <ScrollView>
                 <Header />
-                <View style={styles.searcherFrame}>
-                    <Searcher />
-                </View>
+                <Searcher />
                 <MarketingBar />
                 <Text style = {styles.HighlightTitle}>Recently Added</Text>
                 <CourseList />
@@ -37,10 +35,6 @@ const styles = StyleSheet.create({
         fontSize: 22,
         margin: 16
     },
-    searcherFrame: {
-        backgroundColor: '#5E5E5E'
-    }
   });
-
 
 export default Landing

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import styles from '../styles/MarketingBar';
 
 class MarketingBar extends Component {
 
@@ -14,28 +15,5 @@ class MarketingBar extends Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex:1,
-        backgroundColor: '#FF6622',
-        alignItems: 'center'
-    },
-    marketingText:{
-        color:'#fff',
-        fontSize: 18,
-        margin: 8
-    },
-    marketingButton: {
-        flex:1,
-        alignItems: 'center',
-        backgroundColor: '#fff',
-        marginBottom: 18,
-        marginLeft: 12,
-        marginRight: 12,
-        padding: 18,
-        width:200
-    }
-})
 
 export default MarketingBar;

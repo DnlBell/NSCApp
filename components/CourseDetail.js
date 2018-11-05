@@ -1,7 +1,9 @@
 import React from 'react';
 import { Text, ImageBackground, Button } from 'react-native';
-import Card from './Card';
 import { withRouter } from 'react-router-native';
+
+import styles from '../styles/CourseDetail'
+import Card from './Card';
 
 const CourseDetail = (props) => {
     return (
@@ -12,28 +14,11 @@ const CourseDetail = (props) => {
             imageStyle={{resizeMode:"stretch"}}
             >
                 <Text style={styles.textStyle}>{props.course.title}</Text>
-                <Button title="Details" onPress={() => props.history.push("/course", {id: props.course.id})}/>
+                <Button title="Details" style = {styles.detailsButton} onPress={() => props.history.push("/course", {id: props.course.id})}/>
             </ImageBackground>
-            
         </Card>
     )
 
-}
-
-const styles = {
-    imgBackground: {
-        width: '100%',
-        height: '100%',
-        flex: 1
-    },
-    textStyle: {
-        backgroundColor: '#FF6622',
-        textAlignVertical: 'center',
-        textAlign: 'center',
-        flexDirection: 'row',
-        color: '#fff',
-        fontSize: 18
-    }
 }
 
 export default withRouter(CourseDetail);
