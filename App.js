@@ -2,34 +2,37 @@ import * as React from 'react';
 import { Switch, Route } from 'react-router';
 import { NativeRouter } from 'react-router-native';
 
-import Dummy from './components/Dummy/Dummy.js';
-import Profile from './components/Profile.js';
-import Search from './components/Search.js';
-import Landing from './components/Landing.js';
-import CoursePage from './components/CoursePage';
-import Results from './components/Results';
+import Profile from './screens/Profile.js';
+import Search from './screens/Search.js';
+import Landing from './screens/Landing.js';
+import Course from './screens/Course.js';
+import Cart from './screens/Cart.js';
+import Filter from './screens/Filter.js';
+import Purchase from './screens/Filter.js';
+import Login from './screens/Login.js';
+import Results from './screens/Results.js';
 
-// import getStore from './getStore';
-// const store = getStore();                   // this is the combined state (redux store)
-
+/**
+ * This stores the root mapping for the entire project. When adding a new page
+ * add it to the route list here.
+ */
 export default class App extends React.Component {
   render() {
     return (
       <NativeRouter>
             <Switch>
                 <Route exact path="/" component={Landing} />
+                <Route path="/course" component={Course} />
                 <Route path="/search" component={Search} />
-                <Route path="/course" component={CoursePage} />
-                <Route path="/course/purchase" component={Dummy} />
-
-                <Route path="/login" component={Dummy} />
+                <Route path="/results" component={Results} />
                 <Route path="/profile" component={Profile} />
-
-                <Route path="/about" component={Dummy} />
-                <Route path="/contact" component={Dummy} />
-            </Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/cart" component={Cart} />
+                <Route path="/purchase" component={Purchase} />
+                <Route path="/filter" component={Filter} />
+            </Switch>          
       </NativeRouter>
     )
-  };
-};
+  }
+}
 

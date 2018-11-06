@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
 
-import Footer from './Footer'; 
-import Header from './Header';
+import Footer from '../components/Footer'; 
+import Header from '../components/Header';
 
 export default ({ location }) =>(
             <View style={styles.container}>
                 <ScrollView>
                     <Header/>
-                    <Text>{JSON.stringify(location.state)}</Text>
+                    <Text>filter</Text>
                 </ScrollView>
                 <Footer/>
             </View>
