@@ -4,14 +4,13 @@ import { Text, View, ScrollView, Image, TextInput, TouchableOpacity } from 'reac
 import { Dimensions } from "react-native";
 import { withRouter } from 'react-router-native';
 
-import LabeledInput from '../components/LabeledInput';
-
+//styles import
+import styles from'../styles/Profile.js';
 
 //Component imports
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-
-var width = Dimensions.get('window').width - 18;
+import LabeledInput from '../components/LabeledInput';
 
 const Profile = (props) => {
 
@@ -47,24 +46,26 @@ const Profile = (props) => {
 
         <Text style={textStyle}>Welcome, name!</Text>
 
-        <LabeledInput
-          label="First Name"
-          textContentType='givenName'
-          underlineColorAndroid='transparent'
-        />
+        <View style = {styles.inputFrame}>
+          <LabeledInput
+            label="First Name"
+            textContentType='givenName'
+            underlineColorAndroid='transparent'
+          />
 
-        <LabeledInput
-          label="Last Name"
-          textContentType='familyName'
-          underlineColorAndroid='transparent'
-        />
+          <LabeledInput
+            label="Last Name"
+            textContentType='familyName'
+            underlineColorAndroid='transparent'
+          />
 
-        <LabeledInput
-          label="Phone Number"
-          textContentType='telephoneNumber'
-          dataDetectorTypes='phoneNumber'
-          underlineColorAndroid='transparent'
-        />
+          <LabeledInput
+            label="Phone Number"
+            textContentType='telephoneNumber'
+            dataDetectorTypes='phoneNumber'
+            underlineColorAndroid='transparent'
+          />
+        </View>
 
         <Text style={textStyle}>Enrolled Classes</Text>
 
@@ -92,39 +93,5 @@ const Profile = (props) => {
     </View>
   );
 };
-
-const styles = {
-  viewStyle: {
-    flex:1
-  },
-
-  imageStyle: {
-    width: 100,
-    height: 100,
-    borderRadius: 100,
-    alignSelf: 'center',
-    marginTop: 20,
-    marginBottom: 10
-  },
-
-  textStyle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    alignSelf: 'center'
-  },
-
-  loginButton : {
-    backgroundColor: '#FF6622',
-    alignItems: 'center',
-    marginBottom: 30,
-    marginLeft: 9,
-    width: width,
-    padding: 18
-  },
-  loginButtonText: {
-    color:'#fff',
-    fontSize:24
-  }
-}
 
 export default withRouter(Profile);
