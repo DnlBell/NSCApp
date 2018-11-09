@@ -7,22 +7,18 @@ import filterKeywords from 'mspnmodel/distribution/filter/filterKeyword';
 import Course from 'mspnmodel/distribution/course/course';
 
 
-//const foo = new filter();
-const foo = new filter();
-const fkw = new filterKeywords();
-fkw.setKeywords(['CTO', 'painting']);
-foo.keywords = fkw;
-
+const initialFilter = new filter();
+const initialKeywordFilter = new filterKeywords();
+initialKeywordFilter.setKeywords([]);
+initialFilter.keywords = initialKeywordFilter;
 
 const defaultState = {
-    searchFilter: foo,             // current filter object
+    searchFilter: initialFilter,             // current filter object
     searchResultsCourses: [],     // current courses result (sub)set
     searchResultsPartners: [],    // current partners result (sub)set
 };
 
 function reduceUpdateFilter(state, action) {
-    console.log('reducteUpdateFilter', action);
-
     const newState = extend({}, state, {searchFilter: action.filter});
     return newState;
 }
@@ -35,20 +31,15 @@ function reduceResetFilter(state, action) {
     // store results from search
 function reduceSearchResults(state, action) {
     // :TODO: Implement
-    console.log('reduceSearchResults:', action.type);
     if (action.results && action.results.courses) {
         const rawCourseArray = action.results.courses;
         const rawVendorArray = action.results.vendors;
         const courseArray = [];
         //const vendorArray = [];
-        console.log('results - list', rawCourseArray.length, rawVendorArray.length);
 
         for (let ci = 0; ci < rawCourseArray.length; ci++) {
             const c = new Course();
             c.buildFromJSON(rawCourseArray[ci]);
-            if (c === 0) {
-                console.log('Course:', c);
-            }
             courseArray.push(c);
         }
 
@@ -64,12 +55,10 @@ function reduceSearchResults(state, action) {
     // store results from aspirational search
 function reduceSearchAspirational(state, action) {
     //:TODO: Implement
-    console.log('reduceSearchAspirational:', action);
     return state;
 }
 
 function searchReducer (state = defaultState, action) {
-    console.log('searchReducer', action.type);
     switch (action.type) {
         case actionTypes.SEARCH_RECEIVE_UPDATE_FILTER:
             return reduceUpdateFilter(state, action);
