@@ -15,11 +15,12 @@ export const Colors = {
 //Font sizes
 export const FontSizes = { 
     ButtonFontSize : 24,
-    ReadingFontSize : 18,
+    ReadingFontSize : 14,
     HeaderFontSize : 40
 }
 
 //Margins
 export const Margins = {
-    DefaultMargin : 18
+    DefaultMargin : 18,
+    HalfMargin: 9
 }

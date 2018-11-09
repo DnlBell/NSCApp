@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
-import { View, ScrollView, Text, TouchableHighlight, StyleSheet, Button } from 'react-native';
+import { View, ScrollView, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Dimensions } from "react-native";
 
 import formModel from 'tcomb-form-native';
 
 import Header from '../components/Header';
+import Footer from'../components/Footer.js';
+
+import styles from'../styles/Login.js';
 
 
 var width = Dimensions.get('window').width - 18;
@@ -46,55 +49,33 @@ class Login extends Component {
       console.log(error);
     })
   }
-
     render() {
         return(
-          <ScrollView >
-            <Header />
-            <View>
-            <View style={styles.container}>
-            <View>
-                <Button
-                  title="with Facebook"
-                  color="blue"
-                />
-            </View>
-            <View>
-            </View>
-            <View style={{marginTop:20, marginBottom:10}}>
-                <Button
-                  title="with Google"
-                  color="lightblue"
-                />
-                <Text style={{marginTop: 20, marginBottom:10,  textAlign: 'center',}}>OR</Text>
-            </View>
+          <View style = {{flex:1}}>
+            <ScrollView >
+              <Header />
+              <View style={styles.container}>
+                <TouchableOpacity style = {styles.faceButton}>
+                  <Text style = {styles.buttonText}>Login with Facebook</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style = {styles.googleButton}>
+                  <Text style = {styles.buttonText}>Login with Google</Text>
+                </TouchableOpacity>
                 <Form 
                   type={User}
                   ref={c => this._form = c} 
                 />
-                
                 <Button 
                   title="Login"
                   onPress={this.handler}
                   />
-            </View>
-            </View>
-          </ScrollView>
+              </View>
+            </ScrollView>
+            <Footer />
+          </View>
         )
     }
 };
 
-  const styles = StyleSheet.create({
-    container: {
-      justifyContent: 'center',
-      marginTop: 50,
-      padding: 20,
-      backgroundColor: '#ffffff',
-    },
-    button: {
-      padding:20,
-      backgroundColor: 'blue'
-    }
-  });
 // export this 
 export default Login;
