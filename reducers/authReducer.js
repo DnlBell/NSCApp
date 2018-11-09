@@ -2,16 +2,18 @@
 // authReducer manages login state
 //
 
-export const authReducer = (state = {}, {username, token}) => {
+//:TODO: Fill in functionality as needed (see search reducer for example)
+
+const authReducer = (state = {}, {type, username, token}) => {
     if (type === 'AUTH_LOGGEDIN') {
         // state = unionWith(state, {username, token};
         }
 
-        if (type === 'AUTH_LOGGEDOUT') {
-        // state = unionWith(state, {username: null, token: null});
-        }
+    if (type === 'AUTH_LOGGEDOUT') {
+    // state = unionWith(state, {username: null, token: null});
+    }
 
-        return state;
-    )
+    return state;
 };
 
+export default authReducer;

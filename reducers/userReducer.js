@@ -1,11 +1,12 @@
 // userReducer.js
 // userReducer manages current user profile, enrolled courses, liked courses, followed courses.
 
-export const userReducer = (state = {}, {profile, enrolled, liked, followed}) => {
+//:TODO: Fill in functionality as needed (see search reducer for example)
+
+const userReducer = (state = {}, {type, profile, enrolled, liked, followed}) => {
     if (type === 'USER_LOGGEDIN') {
         // state = unionWith(state, {profile, enrolled, liked, followed};
     }
-
     if (type === 'USER_LOGGEDOUT') {
         // state = unionWith(state, {profile: null, enrolled: null, liked: null, followed: null});
     }
@@ -13,3 +14,4 @@ export const userReducer = (state = {}, {profile, enrolled, liked, followed}) =>
     return state;
 };
 
+export default userReducer;
