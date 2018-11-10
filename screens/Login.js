@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { View, ScrollView, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Dimensions } from "react-native";
-
+import {Redirect} from 'react-router-native';
 import formModel from 'tcomb-form-native';
 
 import Header from '../components/Header';
@@ -20,22 +20,36 @@ const User = formModel.struct({
   password: formModel.String,
 });
 
+const options = {
+  auto: 'placeholders',
+  fields: {
+    password: {
+      password: true,
+      secureTextEntry: true,
+    },
+    email: {
+      keyboardType: 'email-address',
+      autoCorrect: false,
+      autoCapitalize: false,
+    }
+  }
+}
+
 class Login extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      token: false
+    }
     this.handler = this.handler.bind(this);
   }
-  
-  // componentDidMount() {
 
-  // }
-  // handle form submission
   handler() {
     // using the ref to grab the form value
     const formValues = this._form.getValue();
-    console.log(formValues);
-
-    return fetch('https://mspnapi.dolehesten.org/auth/signup', {
+    //console.log(formValues);
+    if (formValues != undefined) {
+    return fetch('https://mspnapi.dolehesten.org/auth/login', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -45,11 +59,21 @@ class Login extends Component {
         uid: formValues.email,
         pwd: formValues.password
       })
-    }).then((response) => response.json()).then((data)=>console.log(data.token)).catch((error) => {
+    }).then((response) => response.json()).then((data)=>{
+      if (data.token != undefined) {
+        this.setState({token: true});
+      }
+    }).catch((error) => {
       console.log(error);
     })
+  } else {
+    return;
   }
+}
     render() {
+      if (this.state.token) {
+        return <Redirect to="/profile"/>
+      }
         return(
           <View style = {{flex:1}}>
             <ScrollView >
@@ -63,7 +87,8 @@ class Login extends Component {
                 </TouchableOpacity>
                 <Form 
                   type={User}
-                  ref={c => this._form = c} 
+                  ref={c => this._form = c}
+                  options={options} 
                 />
                 <Button 
                   title="Login"
@@ -76,6 +101,7 @@ class Login extends Component {
         )
     }
 };
+
 
 // export this 
 export default Login;
