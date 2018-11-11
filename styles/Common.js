@@ -15,7 +15,7 @@ export const Colors = {
 //Font sizes
 export const FontSizes = { 
     ButtonFontSize : 24,
-    ReadingFontSize : 14,
+    ReadingFontSize : 16,
     HeaderFontSize : 40
 }
 
