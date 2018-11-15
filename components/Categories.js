@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
+
+import styles from '../styles/Catagories'
 
 class Categories extends React.Component{
 
@@ -44,26 +46,5 @@ class Categories extends React.Component{
     
     }
 }
-
-const styles = StyleSheet.create({
-    card:{
-        backgroundColor: '#5E5E5E',
-        alignItems: 'center',
-        marginTop: 16,
-        marginLeft: 12,
-        marginRight: 12,
-        padding: 30
-    },
-    cardText:{
-        color:'#fff'
-    },
-    text:{
-        color:'#5E5E5E',
-        textAlign: 'center',
-        fontSize: 22,
-        margin: 16
-    }
-})
-
 
 export default Categories;

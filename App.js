@@ -1,80 +1,46 @@
-import * as React from 'react'
-import { StatusBar, StyleSheet } from 'react-native'
-import { Switch, Route, Redirect } from 'react-router'
-import { NativeRouter } from 'react-router-native'
-import { Navigation, Card, Tab, BottomNavigation } from 'react-router-navigation'
-import Home from './components/Home.js'
-import Profile from './components/Profile.js'
-import Search from './components/Search.js'
-import Landing from './components/Landing.js'
+import * as React from 'react';
+import { Switch, Route } from 'react-router';
+import { NativeRouter, AndroidBackButton} from 'react-router-native';
+import { Provider } from 'react-redux';
+import configureStore from './stores/configureStore';
 
-const styles = StyleSheet.create({
-  tab: {
-    paddingTop: 10,
-    opacity: 10,
-  }
-})
+import Profile from './screens/Profile.js';
+import Search from './screens/Search.js';
+import Landing from './screens/Landing.js';
+import Course from './screens/Course.js';
+import Cart from './screens/Cart.js';
+import Filter from './screens/Filter.js';
+import Purchase from './screens/Filter.js';
+import Login from './screens/Login.js';
+import Results from './screens/Results.js';
 
+const store = configureStore({});
+
+
+/**
+ * This stores the root mapping for the entire project. When adding a new page
+ * add it to the route list here.
+ */
 export default class App extends React.Component {
-  state = {
-    navigation: {},
-    card: {},
-  }
-
-  renderTabs = contextRouter => {
-    const { location, match } = contextRouter
-    return (
-      <Switch location={location}>
-        <Route
-          exact
-          path={match.url}
-          render={() => <Redirect to={`${match.url}/home`} />}
-        />
-        <Route
-          render={() => (
-            <BottomNavigation
-              style={styles.container}
-              tabBarStyle={styles.tabs}
-              tabBarIndicatorStyle={styles.indicator}
-            >
-              <Tab
-                path={`${match.url}/home`}
-                label="Home"
-                component={Landing}
-              />
-              <Tab
-                path={`${match.url}/profile`}
-                label="Profile"
-                component={Profile}
-              />
-              <Tab
-                path={`${match.url}/search`}
-                label="Search"
-                component={Search}
-              />
-            </BottomNavigation>
-          )}
-        />
-      </Switch>
-    )
-  }
-
-
   render() {
-    const { navigation, card } = this.state
     return (
-      <NativeRouter>
-        <React.Fragment>
-          <StatusBar barStyle={navigation.barStyle} />
-          <Navigation
-            navBarStyle={navigation.navBarStyle}
-            titleStyle={navigation.titleStyle}
-            backButtonTintColor={navigation.backButtonTintColor}
-          >
-            <Card exact path="/" title="MindSpand" render={this.renderTabs} />
-          </Navigation>
-        </React.Fragment>
-      </NativeRouter>
+        <Provider store={store}>
+          <NativeRouter>
+            <AndroidBackButton>
+                  <Switch>
+                      <Route exact path="/" component={Landing} />
+                      <Route path="/course" component={Course} />
+                      <Route path="/search" component={Search} />
+                      <Route path="/results" component={Results} />
+                      <Route path="/profile" component={Profile} />
+                      <Route path="/login" component={Login} />
+                      <Route path="/cart" component={Cart} />
+                      <Route path="/purchase" component={Purchase} />
+                      <Route path="/filter" component={Filter} />
+                  </Switch>
+            </AndroidBackButton>
+          </NativeRouter>
+        </Provider>
     )
   }
 }
