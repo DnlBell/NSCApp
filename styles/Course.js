@@ -33,20 +33,17 @@ export default StyleSheet.create({
         color:Colors.AccentColorDark,
         marginTop:Margins.HalfMargin
      },
-    details:{
+    button:{
+        marginTop:Margins.HalfMargin,
         backgroundColor: Colors.AccentColorLight,
         padding: Margins.HalfMargin,
-        margin: Margins.HalfMargin,
         width: ScreenWidth/4,
         alignItems:'center'
     },
-    detailsText:{
+    buttonText:{
         color:Colors.PrimaryColor
     },
-     breakLine:{
+    breakLine:{
 
-     }
-
-
-     
+    }
 });

@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import { View, ScrollView, Text, Image, TouchableHighlight, FlatList } from 'react-native';
+import { View, ScrollView, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import { withRouter } from 'react-router-native';
 import Footer from '../components/Footer';
 import urls from '../constants/urls';
@@ -74,14 +74,17 @@ class Course extends PureComponent{
                             <Text style = {styles.price}>{this.setPrice()} per guest</Text>
                             <Text style = {styles.audience}>Audience: {this.state.course.audience} </Text>
                             <Text style = {styles.text}>{this.state.course.description}</Text>
-                            <TouchableHighlight style={styles.details} onPress={()=> this.toggleStatus()}>
-                                <Text style={styles.detailsText}>More Details</Text>
-                            </TouchableHighlight>
+                                <TouchableOpacity style={styles.button} onPress={()=> this.toggleStatus()}>
+                                    <Text style={styles.buttonText}>More Details</Text>
+                                </TouchableOpacity>
                             {this.state.status ? 
                             <ScrollView>
                                 {this.getInfo()}
                             </ScrollView>
                             : null}
+                            <TouchableOpacity style={styles.button}>
+                                <Text style={styles.buttonText}>Add to Cart</Text>
+                            </TouchableOpacity>
                         </View>
                 </ScrollView>
                     <Footer />
