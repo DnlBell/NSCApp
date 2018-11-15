@@ -3,7 +3,7 @@ import { View, ScrollView, Text, Image, TouchableHighlight, FlatList } from 'rea
 import { withRouter } from 'react-router-native';
 import Footer from '../components/Footer';
 import urls from '../constants/urls';
-import catStyle from '../styles/Catagories';
+import styles from '../styles/Course';
 
 class Course extends PureComponent{
     constructor(props){
@@ -67,43 +67,28 @@ class Course extends PureComponent{
         return (
             <View style= {{flex:1}}>
                 <ScrollView >
-                    <View style={styles.contentContainer}>
-                        <Text>{this.state.course.title}</Text>
-                        <Text>Vendor: {this.state.course.vendorName}</Text>
-                        <Image source={{uri: `${this.state.course.images}`}} style={{width: 150, height: 150}}/>
-                        <Text>Price: {this.setPrice()}</Text>
-                        <Text>Rating: {this.state.course.rating}</Text>
-                        <Text>Description: {this.state.course.description}</Text>
-                        <Text>Audience: {this.state.course.audience} </Text>
-                        <Text>Seats Available: </Text>
-                        <Text>Class Size: </Text>
-
-                        <TouchableHighlight onPress={()=> this.toggleStatus()} style={catStyle.card}>
-                            <Text style={catStyle.cardText}>More Details</Text>
-                        </TouchableHighlight>
-                        {this.state.status ? 
-                        <ScrollView>
-                            {this.getInfo()}
-                        </ScrollView>
-                        : null}
-                    </View>
+                        <Image source={{uri: `${this.state.course.images}`}} style={styles.image}/>
+                        <View style = {styles.marginFrame}>
+                            <Text style = {styles.title}>{this.state.course.title}</Text>
+                            <Text style = {styles.vendor}>Hosted by: {this.state.course.vendorName}</Text>
+                            <Text style = {styles.price}>{this.setPrice()} per guest</Text>
+                            <Text style = {styles.audience}>Audience: {this.state.course.audience} </Text>
+                            <Text style = {styles.text}>{this.state.course.description}</Text>
+                            <TouchableHighlight style={styles.details} onPress={()=> this.toggleStatus()}>
+                                <Text style={styles.detailsText}>More Details</Text>
+                            </TouchableHighlight>
+                            {this.state.status ? 
+                            <ScrollView>
+                                {this.getInfo()}
+                            </ScrollView>
+                            : null}
+                        </View>
                 </ScrollView>
                     <Footer />
             </View>
         )
     }
 
-}
-
-const styles = {
-    pageContainer: {
-       flex:1
-    },
-    contentContainer: {
-        justifyContent: "center",
-        alignItems: "center",
-        paddingTop: 20
-    }
 }
 
 export default withRouter(Course);
