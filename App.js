@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router';
-import { NativeRouter } from 'react-router-native';
+import { NativeRouter, AndroidBackButton} from 'react-router-native';
 import { Provider } from 'react-redux';
 import configureStore from './stores/configureStore';
 
@@ -26,17 +26,19 @@ export default class App extends React.Component {
     return (
         <Provider store={store}>
           <NativeRouter>
-                <Switch>
-                    <Route exact path="/" component={Landing} />
-                    <Route path="/course" component={Course} />
-                    <Route path="/search" component={Search} />
-                    <Route path="/results" component={Results} />
-                    <Route path="/profile" component={Profile} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/cart" component={Cart} />
-                    <Route path="/purchase" component={Purchase} />
-                    <Route path="/filter" component={Filter} />
-                </Switch>
+            <AndroidBackButton>
+                  <Switch>
+                      <Route exact path="/" component={Landing} />
+                      <Route path="/course" component={Course} />
+                      <Route path="/search" component={Search} />
+                      <Route path="/results" component={Results} />
+                      <Route path="/profile" component={Profile} />
+                      <Route path="/login" component={Login} />
+                      <Route path="/cart" component={Cart} />
+                      <Route path="/purchase" component={Purchase} />
+                      <Route path="/filter" component={Filter} />
+                  </Switch>
+            </AndroidBackButton>
           </NativeRouter>
         </Provider>
     )

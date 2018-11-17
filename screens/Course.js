@@ -1,21 +1,27 @@
-import React, {Component} from 'react';
-import { View, ScrollView, Text, Button, Image, TouchableHighlight } from 'react-native';
+import React, {PureComponent} from 'react';
+import { View, ScrollView, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import { withRouter } from 'react-router-native';
 import Footer from '../components/Footer';
+import urls from '../constants/urls';
+import styles from '../styles/Course';
 
-class Course extends Component{
-    state = {
-        course : {},
-        status: false
-};
+class Course extends PureComponent{
+    constructor(props){
+        super(props);
+        this.state = {
+            course : {},
+            status: false
+        };
+    }
+    
     toggleStatus(){
         this.setState({
           status:!this.state.status
         });
       }
 
-    componentWillMount(){
-        return fetch('https://mspnapi.dolehesten.org/mspnapi/course/'+this.props.location.state.id)
+    componentDidMount(){
+        return fetch(`${urls.mspnApiRoot}/course/${this.props.location.state.id}`)
         .then((response) => response.json())
         .then((responseJson) => {
             this.setState({
@@ -30,43 +36,62 @@ class Course extends Component{
         let dollars = this.state.course.price/100.00;
         return "$ " + parseFloat(Math.round(dollars * 100) / 100).toFixed(2);;
     }
+    getImages(){
+        if(this.state.course.images.length >= 1) {
+            this.state.course.images.map( (image) => {
+                <Image source={{uri: image}}/>
+            })
+        } else {
+            <Text>No Images</Text>
+        }
+        
+    }
+
+    getInfo() {
+        let obj = this.state.course.information; 
+        let keys = [];
+        for(let key in obj){
+            keys.push(obj[key]);   
+        }
+        _keyExtractor = (item, index) => item.label;
+        return (
+            <FlatList
+            data={keys}
+            renderItem={({item}) => <Text>{item.label}: {item.value}</Text>}
+            keyExtractor={_keyExtractor}
+            />
+        ) 
+    }
 
     render() {
         return (
             <View style= {{flex:1}}>
                 <ScrollView >
-                    <View style={styles.contentContainer}>
-                        <Text>{this.state.course.title}</Text>
-                        <Text>Vendor: {this.state.course.vendorName}</Text>
-                        {/* <Image style={{width: 60, height: 60}} source={{uri: this.state.course.images[0]}} /> */}
-                        <Text>{JSON.stringify(this.state.course.images)}</Text>
-                        <Text>Price: {this.setPrice()}</Text>
-                        <Text>Rating: {this.state.course.rating}</Text>
-                        <Text>Description: {this.state.course.description}</Text>
-                        <Button title="Home" onPress={() => this.props.history.push("/")}/>
-
-                        <TouchableHighlight onPress={()=>this.toggleStatus()}>
-                            <Text>More Details</Text>
-                        </TouchableHighlight>
-                        {this.state.status ? <Text>Some Details</Text>: null}
-                    </View>
+                        <Image source={{uri: `${this.state.course.images}`}} style={styles.image}/>
+                        <View style = {styles.marginFrame}>
+                            <Text style = {styles.title}>{this.state.course.title}</Text>
+                            <Text style = {styles.vendor}>Hosted by: {this.state.course.vendorName}</Text>
+                            <Text style = {styles.price}>{this.setPrice()} per guest</Text>
+                            <Text style = {styles.audience}>Audience: {this.state.course.audience} </Text>
+                            <Text style = {styles.text}>{this.state.course.description}</Text>
+                                <TouchableOpacity style={styles.button} onPress={()=> this.toggleStatus()}>
+                                    <Text style={styles.buttonText}>More Details</Text>
+                                </TouchableOpacity>
+                            {this.state.status ? 
+                            <ScrollView>
+                                {this.getInfo()}
+                            </ScrollView>
+                            : null}
+                            <TouchableOpacity style={styles.button}>
+                                <Text style={styles.buttonText}>Add to Cart</Text>
+                            </TouchableOpacity>
+                        </View>
                 </ScrollView>
                     <Footer />
             </View>
         )
     }
 
-}
-
-const styles = {
-    pageContainer: {
-       flex:1
-    },
-    contentContainer: {
-        justifyContent: "center",
-        alignItems: "center",
-        paddingTop: 20
-    }
 }
 
 export default withRouter(Course);
