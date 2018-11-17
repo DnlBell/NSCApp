@@ -18,6 +18,8 @@ export default keyMirror({
     SEARCH_FETCH_ASPIRATIONAL: null,
     SEARCH_RECEIVE_ASPIRATIONAL: null,
     
-    LOGIN_UPDATE_USER_INFO: null, 
-    LOGIN_RECIEVE_USER_INFO: null
+    AUTH_FETCH_LOGIN: null, 
+    LOGIN_RECIEVE_USER_INFO: null,
+    AUTH_RECEIVE_UPDATE_LOGIN: null,
+    AUTH_RECEIVE_LOGIN: null,
 });

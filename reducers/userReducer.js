@@ -5,10 +5,12 @@
 
 const userReducer = (state = {}, {type, profile, enrolled, liked, followed}) => {
     if (type === 'USER_LOGGEDIN') {
-        // state = unionWith(state, {profile, enrolled, liked, followed};
+        state = unionWith(state, {profile, enrolled, liked, followed});
+        console.log ("LOGGED IN USER REDUCER");
     }
     if (type === 'USER_LOGGEDOUT') {
-        // state = unionWith(state, {profile: null, enrolled: null, liked: null, followed: null});
+        state = unionWith(state, {profile: null, enrolled: null, liked: null, followed: null});
+        console.log ("LOGGED OUT USER REDUCER");
     }
 
     return state;

@@ -1,18 +1,31 @@
-import searchApi from '../api/searchApi'
-import actionsTypes from '../constants/actionsTypes';
-import { updateAuth, loginSubmit } from '../actions/authActions';
+import authApi from '../api/authApi'
+import actionTypes from '../constants/actionsTypes';
+import { receiveUpdateLogin, receiveLogin } from '../actions/authActions';
+import { all, call, put, fork, takeLatest } from 'redux-saga/effects';
 
 
-function* userLogin(action) {
+function* fetchLogin(action) {
     const userInfo = action.userInfo;
-    yield put(loginSubmit(userInfo));
+    yield put(receiveUpdateLogin(userInfo));
+    console.log("At the authSaga");
+    const results = yield call(authApi.fetchLogin, userInfo);
+
+    if (results) {
+        console.log(results);
+        yield put(receiveLogin(results));
+    } else {
+        console.log("ERROR");
+    }
 }
 
-
+function* fetchLoginSaga() {
+    console.log("fetchLoginSaga");
+    yield takeLatest(actionTypes.AUTH_FETCH_LOGIN, fetchLogin);
+}
 
 function* yieldAuthSagas() {
     yield all([
-        fork(userLogin)
+        fork(fetchLoginSaga)
     ]);
 }
 
