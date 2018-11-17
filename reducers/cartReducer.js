@@ -1,16 +1,28 @@
-// searchReducer.js
+import actionTypes from '../constants/actionsTypes';
+import extend from 'lodash/extend';
+import cart from 'mspnmodel/distribution/cart/cart';
 // Holds current current cart, filter and search results
 
 //:TODO: Fill in functionality as needed (see search reducer for example)
+const initialCart = new cart();
 
-const cartReducer = (state = {cart: {}}, {type, cart}) => {
-    if (type === 'UPDATE_CART') {
-        // state = unionWith(state, {cart};
-    }
+const defaultState = {
+    cart: initialCart,             // current filter object
+};
 
-    if (type === 'CLEAR_CART') {
-        // state= unionWith(state, {cart: null});
+function reduceUpdateCartItems(state, action) {
+    const newState = extend({}, state, {cart: action.cart});
+    return newState;
+}
+
+const cartReducer = (state = defaultState, action) => {
+    switch (action.type){
+        case (actionTypes.UPDATE_CART_ITEMS):
+            return reduceUpdateCartItems(state, action);
+        case (actionTypes.CLEAR_CART):
+            // state= unionWith(state, {cart: null});
     }
+    
 
     return state;
 };

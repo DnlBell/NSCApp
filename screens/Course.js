@@ -1,6 +1,9 @@
 import React, {PureComponent} from 'react';
 import { View, ScrollView, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import { withRouter } from 'react-router-native';
+import { connect } from 'react-redux';
+import { updateCart } from '../actions/cartActions'
+import { cart } from 'mspnmodel/distribution/cart/cart';
 import Footer from '../components/Footer';
 import urls from '../constants/urls';
 import styles from '../styles/Course';
@@ -12,6 +15,7 @@ class Course extends PureComponent{
             course : {},
             status: false
         };
+        this.addToCart = this.addToCart.bind(this);
     }
     
     toggleStatus(){
@@ -63,6 +67,13 @@ class Course extends PureComponent{
         ) 
     }
 
+    addToCart() {
+        const newCart = new cart();
+        newCart.copy(this.props.cart);
+        this.props.addCart(newCart, this.props.history);
+        console.log(this.props.newCart);
+    }
+
     render() {
         return (
             <View style= {{flex:1}}>
@@ -83,7 +94,7 @@ class Course extends PureComponent{
                             </ScrollView>
                             : null}
                             <TouchableOpacity style={styles.button}>
-                                <Text style={styles.buttonText}>Add to Cart</Text>
+                                <Text style={styles.buttonText} onPress={this.addToCart}>Add to Cart</Text>
                             </TouchableOpacity>
                         </View>
                 </ScrollView>
@@ -94,4 +105,20 @@ class Course extends PureComponent{
 
 }
 
-export default withRouter(Course);
+const mapStateToProps = (state) => (
+    {
+        cart: state.cartReducer.updateCart,
+    }
+);
+
+    // this links Searcher functions to the dispatcher so we can call sagas.
+const mapDispatchToProps = dispatch => (
+    {
+        addCart: (cart, history) => {
+            dispatch(updateCart(cart));    // call to the saga via action
+            history.push("/cart");           // push to new component on completion
+        },
+    }
+);
+
+export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Course));
