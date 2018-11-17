@@ -17,4 +17,7 @@ export default keyMirror({
 
     SEARCH_FETCH_ASPIRATIONAL: null,
     SEARCH_RECEIVE_ASPIRATIONAL: null,
+    
+    LOGIN_UPDATE_USER_INFO: null, 
+    LOGIN_RECIEVE_USER_INFO: null
 });

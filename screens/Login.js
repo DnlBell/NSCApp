@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import { View, ScrollView, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Dimensions } from "react-native";
+import { withRouter } from 'react-router-native';
 import {Redirect} from 'react-router-native';
 import formModel from 'tcomb-form-native';
+import { connect } from 'react-redux';
 
 import Header from '../components/Header';
 import Footer from'../components/Footer.js';
@@ -38,42 +40,17 @@ const options = {
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      token: false
-    }
-    this.handler = this.handler.bind(this);
   }
 
-  handler() {
-    // using the ref to grab the form value
-    const formValues = this._form.getValue();
-    //console.log(formValues);
-    if (formValues != undefined) {
-    return fetch('https://mspnapi.dolehesten.org/auth/login', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        uid: formValues.email,
-        pwd: formValues.password
-      })
-    }).then((response) => response.json()).then((data)=>{
-      if (data.token != undefined) {
-        this.setState({token: true});
-      }
-    }).catch((error) => {
-      console.log(error);
-    })
-  } else {
-    return;
+  onSubmit() {
+    const user = new User(); // might not work! 
+    user.copy(this.props.userInfo);
+    this.props.onSubmit(user, this.props.history);
   }
-}
+
+  // handler used to be here
     render() {
-      if (this.state.token) {
-        return <Redirect to="/profile"/>
-      }
+      
         return(
           <View style = {{flex:1}}>
             <ScrollView >
@@ -103,5 +80,21 @@ class Login extends Component {
 };
 
 
+    // this links Searcher props to redux store
+    const mapStateToProps = (state) => (
+      {
+          userInfo: state.authReducer.userInfo,
+      }
+  );
+  
+      // this links Searcher functions to the dispatcher so we can call sagas.
+  const mapDispatchToProps = dispatch => (
+      {
+          onSubmit: (userInfo, history) => {
+              dispatch(loginSubmit(userInfo));    // call to the saga via action
+              history.push("/profile");           // push to new component on completion
+          },
+      }
+  );
 // export this 
-export default Login;
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));
