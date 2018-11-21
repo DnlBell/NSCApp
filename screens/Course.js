@@ -107,7 +107,7 @@ class Course extends PureComponent{
 
 const mapStateToProps = (state) => (
     {
-        cart: state.cartReducer.updateCart,
+        cart: state.cartReducer.cart,
     }
 );
 
