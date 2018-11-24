@@ -1,9 +1,12 @@
 import React, {PureComponent} from 'react';
-import { View, ScrollView, Text, Image, TouchableHighlight, FlatList } from 'react-native';
+import { View, ScrollView, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import { withRouter } from 'react-router-native';
+import { connect } from 'react-redux';
+import { updateCart } from '../actions/cartActions'
+import { cart } from 'mspnmodel/distribution/cart/cart';
 import Footer from '../components/Footer';
 import urls from '../constants/urls';
-import catStyle from '../styles/Catagories';
+import styles from '../styles/Course';
 
 class Course extends PureComponent{
     constructor(props){
@@ -12,6 +15,7 @@ class Course extends PureComponent{
             course : {},
             status: false
         };
+        this.addToCart = this.addToCart.bind(this);
     }
     
     toggleStatus(){
@@ -63,30 +67,36 @@ class Course extends PureComponent{
         ) 
     }
 
+    addToCart() {
+        const newCart = new cart();
+        newCart.copy(this.props.cart);
+        this.props.addCart(newCart, this.props.history);
+        console.log(this.props.newCart);
+    }
+
     render() {
         return (
             <View style= {{flex:1}}>
                 <ScrollView >
-                    <View style={styles.contentContainer}>
-                        <Text>{this.state.course.title}</Text>
-                        <Text>Vendor: {this.state.course.vendorName}</Text>
-                        <Image source={{uri: `${this.state.course.images}`}} style={{width: 150, height: 150}}/>
-                        <Text>Price: {this.setPrice()}</Text>
-                        <Text>Rating: {this.state.course.rating}</Text>
-                        <Text>Description: {this.state.course.description}</Text>
-                        <Text>Audience: {this.state.course.audience} </Text>
-                        <Text>Seats Available: </Text>
-                        <Text>Class Size: </Text>
-
-                        <TouchableHighlight onPress={()=> this.toggleStatus()} style={catStyle.card}>
-                            <Text style={catStyle.cardText}>More Details</Text>
-                        </TouchableHighlight>
-                        {this.state.status ? 
-                        <ScrollView>
-                            {this.getInfo()}
-                        </ScrollView>
-                        : null}
-                    </View>
+                        <Image source={{uri: `${this.state.course.images}`}} style={styles.image}/>
+                        <View style = {styles.marginFrame}>
+                            <Text style = {styles.title}>{this.state.course.title}</Text>
+                            <Text style = {styles.vendor}>Hosted by: {this.state.course.vendorName}</Text>
+                            <Text style = {styles.price}>{this.setPrice()} per guest</Text>
+                            <Text style = {styles.audience}>Audience: {this.state.course.audience} </Text>
+                            <Text style = {styles.text}>{this.state.course.description}</Text>
+                                <TouchableOpacity style={styles.button} onPress={()=> this.toggleStatus()}>
+                                    <Text style={styles.buttonText}>More Details</Text>
+                                </TouchableOpacity>
+                            {this.state.status ? 
+                            <ScrollView>
+                                {this.getInfo()}
+                            </ScrollView>
+                            : null}
+                            <TouchableOpacity style={styles.button}>
+                                <Text style={styles.buttonText} onPress={this.addToCart}>Add to Cart</Text>
+                            </TouchableOpacity>
+                        </View>
                 </ScrollView>
                     <Footer />
             </View>
@@ -95,15 +105,20 @@ class Course extends PureComponent{
 
 }
 
-const styles = {
-    pageContainer: {
-       flex:1
-    },
-    contentContainer: {
-        justifyContent: "center",
-        alignItems: "center",
-        paddingTop: 20
+const mapStateToProps = (state) => (
+    {
+        cart: state.cartReducer.cart,
     }
-}
+);
 
-export default withRouter(Course);
+    // this links Searcher functions to the dispatcher so we can call sagas.
+const mapDispatchToProps = dispatch => (
+    {
+        addCart: (cart, history) => {
+            dispatch(updateCart(cart));    // call to the saga via action
+            history.push("/cart");           // push to new component on completion
+        },
+    }
+);
+
+export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Course));

@@ -17,6 +17,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "expo": "^30.0.1",
+    "mspnmodel": "https://www.github.com:NorthSeattleCollegeDreamTeam/mspnmodel.git",
     "keymirror": "^0.1.1",
     "lodash": "^4.17.11",
     "mspnmodel": "git+https://github.com/NorthSeattleCollegeDreamTeam/mspnmodel.git",
