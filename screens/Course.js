@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-native';
 import { connect } from 'react-redux';
 import { updateCart } from '../actions/cartActions'
 import cart from 'mspnmodel/distribution/cart/cart';
-import course from  'mspnmodel/distribution/course/course';
+import cartLineItem from  'mspnmodel/distribution/cart/cartLineItem';
 import Footer from '../components/Footer';
 import urls from '../constants/urls';
 import styles from '../styles/Course';
@@ -71,7 +71,7 @@ class Course extends PureComponent{
     addToCart() {
         const newCart = new cart();
         newCart.copy(this.props.cart);
-        const myCourse = new course();
+        const myCourse = new cartLineItem();
         myCourse.buildFromJSON(this.state.course);
         newCart.addItem(myCourse);
         this.props.addCart(newCart, this.props.history);

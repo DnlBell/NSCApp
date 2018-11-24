@@ -13,7 +13,7 @@ class Cart extends Component {
     }
 
     componentDidMount(){
-        console.log(this.props.cart.items[0]);
+        console.log(this.props.cart);
     }
 
     render(){
