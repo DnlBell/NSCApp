@@ -51,6 +51,6 @@
       "node_modules/(?!react-native|react-router-native)/"
     ],
     "collectCoverage": true,
-    "coveragePathIgnorePatterns": ["actions/cartActions.js", "actions/searchActions.js"]
+    "coveragePathIgnorePatterns": ["actions/*.js", "screens/*.js"]
   }
 }
