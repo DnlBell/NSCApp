@@ -29,7 +29,7 @@ export default class App extends React.Component {
                   <Switch>
                       <Route exact path="/" component={Landing} />
                       <Route path="/course" component={Course} />
-                      <Route path="/search" component={Search} />
+                      <Route testID='search' path="/search" component={Search} />
                       <Route path="/results" component={Results} />
                       <Route path="/profile" component={Profile} />
                       <Route path="/login" component={Login} />
