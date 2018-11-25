@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router';
 import { NativeRouter, AndroidBackButton} from 'react-router-native';
 import { Provider } from 'react-redux';
 import configureStore from './stores/configureStore';
-
 import Profile from './screens/Profile.js';
 import Search from './screens/Search.js';
 import Landing from './screens/Landing.js';
