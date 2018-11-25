@@ -17,7 +17,11 @@ export default keyMirror({
 
     SEARCH_FETCH_ASPIRATIONAL: null,
     SEARCH_RECEIVE_ASPIRATIONAL: null,
+
     
     LOGIN_UPDATE_USER_INFO: null, 
-    LOGIN_RECIEVE_USER_INFO: null
+    LOGIN_RECIEVE_USER_INFO: null,
+    CART_FETCH_COURSE: null,
+    CART_UPDATE_ITEMS: null,
+    CART_CLEAR: null,
 });
