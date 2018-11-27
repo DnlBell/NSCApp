@@ -1,7 +1,8 @@
 
 import renderer from 'react-test-renderer';
 import actionTypes from '../constants/actionsTypes';
-const searchActions = require('../actions/searchActions');
+//const searchActions = require('../actions/searchActions');
+import * as searchActions from '../actions/searchActions'
 
 // describe('skip test', () => {
 //     xtest('tests to be skipped', () => {
