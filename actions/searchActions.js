@@ -2,7 +2,7 @@
 
 import actionTypes from '../constants/actionsTypes';
 
-export function updateFilter(filter = {}) {
+function updateFilter(filter = {}) {
     return {
         type: actionTypes.SEARCH_UPDATE_FILTER,
         filter,
@@ -55,3 +55,6 @@ export function receiveAspirational() {
         results,
     }
 }
+
+
+module.exports = updateFilter;

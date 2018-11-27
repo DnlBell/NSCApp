@@ -20,7 +20,7 @@ const searchActions = require('../actions/searchActions');
     expect(searchActions.updateFilter()).toBeDefined();
   });
 
-  test('searchActions function returns an object', () => {
+  test(' function returns an object', () => {
     // mock lodash random to return the value 2 in second test
     searchActions.updateFilter = jest.fn((filter={}) => {
       return {
