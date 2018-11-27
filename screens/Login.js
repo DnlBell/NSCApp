@@ -12,7 +12,7 @@ import Footer from'../components/Footer.js';
 import styles from'../styles/Login.js';
 
 import { loginSubmit } from '../actions/authActions';
-import User from 'mspnmodel/distribution/user/user';
+import Users from 'mspnmodel/distribution/user/user';
 
 
 var width = Dimensions.get('window').width - 18;
@@ -54,10 +54,11 @@ class Login extends Component {
   }
 
 
-  onSubmit() {
-    const user = new User(); // might not work! 
-    user.copy(this.props.userInfo);
-    this.props.login(user, this.props.history);
+  onSubmit(userInfo) {
+    const user = new Users(); // might not work! 
+    console.log(user)
+    user.copy(user.userInfo);
+    this.props.login(this.props.user, this.props.history);
     // EMPTY object 
   //console.log(user)
   }

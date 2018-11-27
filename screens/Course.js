@@ -111,8 +111,6 @@ class Course extends PureComponent{
 
 }
 
-
-export default withRouter(Course);
 const mapStateToProps = (state) => (
     {
         cart: state.cartReducer.cart,
