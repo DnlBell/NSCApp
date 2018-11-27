@@ -1,7 +1,7 @@
 
 import renderer from 'react-test-renderer';
 import actionTypes from '../constants/actionsTypes';
-const updateCart = require('../actions/cartActions');
+const searchActions = require('../actions/searchActions');
 
 // describe('skip test', () => {
 //     xtest('tests to be skipped', () => {
@@ -14,19 +14,19 @@ const updateCart = require('../actions/cartActions');
 
 
   
-  test('updateCart function exists', () => {
+  test('searchActions function exists', () => {
     // mock lodash random to return the value 2 in second test
-    updateCart.updateCart = jest.fn(() => true);
-    expect(updateCart.updateCart()).toBeDefined();
+    searchActions.updateFilter = jest.fn(() => true);
+    expect(searchActions.updateFilter()).toBeDefined();
   });
 
-  test('updateCart function returns an object', () => {
+  test('searchActions function returns an object', () => {
     // mock lodash random to return the value 2 in second test
-    updateCart.updateCart = jest.fn((cart={}) => {
+    searchActions.updateFilter = jest.fn((filter={}) => {
       return {
-        type: actionTypes.CART_UPDATE_ITEMS,
-        cart: cart
+        type:  actionTypes.SEARCH_UPDATE_FILTER,
+        filter: filter
       }
     });
-    expect(updateCart.updateCart()).toBeTruthy();
+    expect(searchActions.updateFilter()).toBeTruthy();
   });
