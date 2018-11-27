@@ -49,6 +49,7 @@
     "transformIgnorePatterns": [
       "node_modules/(?!react-native|react-router-native)/"
     ],
-    "collectCoverage": true
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": ["actions/*.js", "screens/*.js"]
   }
 }
