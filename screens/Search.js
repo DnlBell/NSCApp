@@ -5,7 +5,6 @@ import { View, ScrollView, StyleSheet } from 'react-native';
 import Header from '../components/Header';
 import Searcher from '../components/Searcher';
 import Footer from '../components/Footer';
-import ErrorBoundary from '../components/ErrorBoundary';
 
 class Search extends Component {
   render() {
@@ -14,9 +13,7 @@ class Search extends Component {
       <ScrollView>
         <Header />
         <View style={styles.searcherFrame}>
-          <ErrorBoundary>
             <Searcher />
-          </ErrorBoundary>
         </View>
       </ScrollView>
       <Footer />

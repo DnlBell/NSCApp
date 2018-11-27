@@ -5,7 +5,6 @@ import { Text, View, TextInput,TouchableOpacity } from 'react-native';
 import { withRouter } from 'react-router-native';
 import { connect } from 'react-redux';
 import styles from '../styles/Searcher';
-import ErrorBoundary from './ErrorBoundary';
 import { fetchProducts } from '../actions/searchActions';
 import filter from 'mspnmodel/distribution/filter/filter';
 import filterKeywords from 'mspnmodel/distribution/filter/filterKeyword';
@@ -52,7 +51,6 @@ class Searcher extends Component {
   }
 
   onPressSearch() {
-      this.setState({error: true})
       const newFilter = new filter();
       newFilter.copy(this.props.filter);
       if (newFilter && newFilter.keywords && newFilter.keywords.keywords) {
@@ -67,9 +65,6 @@ class Searcher extends Component {
   }
 
   render() {
-      if (this.state.error) {
-          throw Error("There is an error in Searcher Component");
-      }
     return (
       <View style = {styles.searcherBox}>
         <TextInput 
@@ -111,7 +106,7 @@ class Searcher extends Component {
         }
     );
 
-    
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps
