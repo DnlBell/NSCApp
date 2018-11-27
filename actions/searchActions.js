@@ -55,3 +55,9 @@ export function receiveAspirational() {
         results,
     }
 }
+
+
+module.exports = {
+    updateFilter,
+    receiveUpdateFilter
+  };
