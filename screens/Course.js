@@ -121,4 +121,8 @@ const mapDispatchToProps = dispatch => (
     }
 );
 
+<<<<<<< HEAD
 export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Course));
+=======
+export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Course));
+>>>>>>> 297d6e8f2748a9f7602e4048eb770f1b24b55457
