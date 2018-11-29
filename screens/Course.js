@@ -74,6 +74,7 @@ class Course extends PureComponent{
         const myCourse = new cartLineItem();
         myCourse.buildFromJSON(this.state.course);
         newCart.addItem(myCourse);
+        console.log(newCart);
         this.props.addCart(newCart, this.props.history);
     }
 
@@ -118,7 +119,7 @@ const mapStateToProps = (state) => (
 const mapDispatchToProps = dispatch => (
     {
         addCart: (cart, history) => {
-            dispatch(updateCart(cart));    // call to the reducer via action
+            dispatch(updateCart(cart));    // call to the saga via action
             history.push("/cart");           // push to new component on completion
         },
     }
