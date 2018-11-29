@@ -14,7 +14,8 @@ const defaultState = {
 
 const authReducer = (state = defaultState, {type, username, token}) => {
     if (type === 'AUTH_LOGGEDIN') {
-        // state = unionWith(state, {username, token};
+        console.log(state)
+        // state = unionWith(state, {username,password, token};
         }
     if (type == 'LOGIN_UPDATE_USER_INFO') {
         

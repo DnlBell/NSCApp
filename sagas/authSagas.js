@@ -8,15 +8,26 @@ import authApi from '../api/authApi.js';
 
 export function* userLogin(action) {
     const userInfo = action.userInfo;
-    const result = yield call((authApi.handler.userInfo);
+    const result = yield call(authApi.handler, userInfo);
     yield put(loginSubmit(userInfo))
 }
+
+function* userLoginSaga() {
+    yield takeLatest(actionTypes.LOGIN_UPDATE_USER_INFO, userLogin);
+ }
+ 
+ export function* yieldAuthSagas() {
+    yield all([
+        fork(userLoginSaga)
+    ]);
+ }
 
 
 
 export function* yieldAuthSagas() {
     yield all([
-        fork(userLogin)
+        fork(userLogin),
+        fork(userLoginSaga)
     ]);
 }
 

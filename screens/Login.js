@@ -56,7 +56,6 @@ class Login extends Component {
 
   onSubmit(userInfo) {
     const user = new Users(); // might not work! 
-    console.log(user)
     user.copy(user.userInfo);
     this.props.login(this.props.user, this.props.history);
     // EMPTY object 
