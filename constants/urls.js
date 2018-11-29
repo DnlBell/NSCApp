@@ -6,11 +6,13 @@ const domain = 'https://mspnapi.dolehesten.org';
 
 const serviceRoot = `${domain}/mspnapi`;
 const secureServiceRoot = `${domain}/mspnsecure`;
-
+const authServiceRoot = `${domain}/auth`
 
 const urls = {
     mspnApiRoot: `${serviceRoot}`,
     mspnApiSecureRoot: `${secureServiceRoot}`,
+    mspnApiAuthRoot: `${authServiceRoot}`
+    
 };
 
 export default urls;
