@@ -1,7 +1,6 @@
 import urls from '../constants/urls';
 const authApi = {
     handler(userInfo) {
-        console.log('handler');
         const url = `${urls.mspnApiAuthRoot}/login`;
         // using the ref to grab the form value
         const formValues = userInfo;
