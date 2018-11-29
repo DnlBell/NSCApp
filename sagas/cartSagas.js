@@ -3,8 +3,8 @@ import { reduceUpdateCart } from '../actions/cartActions';
 import{ all, call, fork, takeLatest, put } from 'redux-saga/effects';
 
 function* cartUpdate(action){
-    const cart = action.cart;
-    yield put(reduceUpdateCart(cart));
+    const cartLineItem = action.course;
+    yield put(reduceUpdateCart(cartLineItem));
 }
 
 function* cartUpdateSaga() {

@@ -11,7 +11,10 @@ const defaultState = {
 };
 
 function reduceUpdateCartItems(state, action) {
-    const newState = extend({}, state, {cart: action.cart});
+    const newCart = new cart();
+    newCart.copy(state.cart);
+    newCart.addItem(action.lineItem);
+    const newState = extend({}, state, {cart: newCart});
     return newState;
 }
 

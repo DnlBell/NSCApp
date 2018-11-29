@@ -7,9 +7,9 @@ export function addCourseToCart(course = {}) {
     };
 }
 
-export function reduceUpdateCart(cart = {}) {
+export function reduceUpdateCart(lineItem = {}) {
     return{
         type: actionTypes.CART_REDUCE_UPDATE_ITEMS,
-        cart
+        lineItem
     }
 }
