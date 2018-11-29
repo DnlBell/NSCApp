@@ -2,14 +2,15 @@ import React, {PureComponent} from 'react';
 import { View, ScrollView, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import { withRouter } from 'react-router-native';
 import { connect } from 'react-redux';
-import { addCourseToCart } from '../actions/cartActions'
+import { addCourseToCart } from '../actions/cartActions';
+import Course from 'mspnmodel/distribution/course/course';
 import cart from 'mspnmodel/distribution/cart/cart';
-import cartLineItem from  'mspnmodel/distribution/cart/cartLineItem';
+import CartLineItem from  'mspnmodel/distribution/cart/cartLineItem';
 import Footer from '../components/Footer';
 import urls from '../constants/urls';
 import styles from '../styles/Course';
 
-class Course extends PureComponent{
+class CoursePage extends PureComponent{
     constructor(props){
         super(props);
         this.state = {
@@ -69,10 +70,12 @@ class Course extends PureComponent{
     }
 
     addToCart() {
-        const myCourse = new cartLineItem();
+        const myCourse = new Course();
         myCourse.buildFromJSON(this.state.course);
+        const newLineItem = new CartLineItem();
+        newLineItem.setCourse(myCourse);
         console.log(myCourse);
-        this.props.addCourseToCart(myCourse, this.props.history);
+        this.props.addCourseToCart(newLineItem, this.props.history);
     }
 
     render() {
@@ -122,4 +125,4 @@ const mapDispatchToProps = dispatch => (
     }
 );
 
-export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Course));
+export default connect(mapStateToProps, mapDispatchToProps) (withRouter(CoursePage));

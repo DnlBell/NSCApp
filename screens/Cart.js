@@ -13,6 +13,7 @@ class Cart extends Component {
 
     componentDidMount(){
         console.log(this.props.cart);
+        console.log(this.props.cart.getItems()[0].getPrice());
     }
 
     render(){
