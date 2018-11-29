@@ -1,10 +1,10 @@
 import actionTypes from '../constants/actionsTypes';
-import { updateCart } from '../actions/cartActions';
+import { reduceUpdateCart } from '../actions/cartActions';
 import{ all, call, fork, takeLatest, put } from 'redux-saga/effects';
 
 function* cartUpdate(action){
     const cart = action.cart;
-    yield put(addCourseToCart(cart));
+    yield put(reduceUpdateCart(cart));
 }
 
 function* cartUpdateSaga() {

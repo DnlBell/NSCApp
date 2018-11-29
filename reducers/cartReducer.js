@@ -11,7 +11,7 @@ const defaultState = {
 };
 
 function reduceUpdateCartItems(state, action) {
-    const newState = extend({}, state, {cart: action.cart});
+    const newState = extend({}, state, {cart: action.course});
     return newState;
 }
 
