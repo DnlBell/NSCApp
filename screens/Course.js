@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import { View, ScrollView, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import { withRouter } from 'react-router-native';
 import { connect } from 'react-redux';
-import { updateCart } from '../actions/cartActions'
+import { addCourseToCart } from '../actions/cartActions'
 import cart from 'mspnmodel/distribution/cart/cart';
 import cartLineItem from  'mspnmodel/distribution/cart/cartLineItem';
 import Footer from '../components/Footer';
@@ -69,13 +69,10 @@ class Course extends PureComponent{
     }
 
     addToCart() {
-        const newCart = new cart();
-        newCart.copy(this.props.cart);
         const myCourse = new cartLineItem();
         myCourse.buildFromJSON(this.state.course);
-        newCart.addItem(myCourse);
-        console.log(newCart);
-        this.props.addCart(newCart, this.props.history);
+        console.log(myCourse);
+        this.props.addCourseToCart(myCourse, this.props.history);
     }
 
     render() {
@@ -118,8 +115,8 @@ const mapStateToProps = (state) => (
     // this links Course functions to the dispatcher so we can call sagas.
 const mapDispatchToProps = dispatch => (
     {
-        addCart: (cart, history) => {
-            dispatch(updateCart(cart));    // call to the saga via action
+        addCourseToCart: (course, history) => {
+            dispatch(addCourseToCart(course));    // call to the saga via action
             history.push("/cart");           // push to new component on completion
         },
     }

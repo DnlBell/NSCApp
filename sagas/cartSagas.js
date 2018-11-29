@@ -4,7 +4,7 @@ import{ all, call, fork, takeLatest, put } from 'redux-saga/effects';
 
 function* cartUpdate(action){
     const cart = action.cart;
-    yield put(updateCart(cart));
+    yield put(addCourseToCart(cart));
 }
 
 function* cartUpdateSaga() {

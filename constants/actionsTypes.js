@@ -18,7 +18,7 @@ export default keyMirror({
     SEARCH_FETCH_ASPIRATIONAL: null,
     SEARCH_RECEIVE_ASPIRATIONAL: null,
 
-    CART_FETCH_COURSE: null,
+    CART_REDUCE_UPDATE_ITEMS: null,
     CART_UPDATE_ITEMS: null,
     CART_CLEAR: null,
 });

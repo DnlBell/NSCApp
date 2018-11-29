@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-native';
 import Footer from '../components/Footer'; 
 import Header from '../components/Header';
 
-
 class Cart extends Component {
     constructor(props){
         super(props);
