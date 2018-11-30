@@ -1,10 +1,18 @@
 import actionTypes from '../constants/actionsTypes';
 
-function updateCart(cart = {}) {
+export function addCourseToCart(course = {}) {
     return {
         type: actionTypes.CART_UPDATE_ITEMS,
-        cart,
+        course,
     };
 }
 
+export function reduceUpdateCart(lineItem = {}) {
+    return{
+        type: actionTypes.CART_REDUCE_UPDATE_ITEMS,
+        lineItem
+    }
+}
+
 module.exports = updateCart;
+

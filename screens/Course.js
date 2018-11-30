@@ -2,14 +2,15 @@ import React, {PureComponent} from 'react';
 import { View, ScrollView, Text, Image, TouchableOpacity, FlatList } from 'react-native';
 import { withRouter } from 'react-router-native';
 import { connect } from 'react-redux';
-import { updateCart } from '../actions/cartActions'
+import { addCourseToCart } from '../actions/cartActions';
+import Course from 'mspnmodel/distribution/course/course';
 import cart from 'mspnmodel/distribution/cart/cart';
-import course from  'mspnmodel/distribution/course/course';
+import CartLineItem from  'mspnmodel/distribution/cart/cartLineItem';
 import Footer from '../components/Footer';
 import urls from '../constants/urls';
 import styles from '../styles/Course';
 
-class Course extends PureComponent{
+class CoursePage extends PureComponent{
     constructor(props){
         super(props);
         this.state = {
@@ -71,12 +72,12 @@ class Course extends PureComponent{
     }
 
     addToCart() {
-        const newCart = new cart();
-        newCart.copy(this.props.cart);
-        const myCourse = new course();
+        const myCourse = new Course();
         myCourse.buildFromJSON(this.state.course);
-        newCart.addItem(myCourse);
-        this.props.addCart(newCart, this.props.history);
+        const newLineItem = new CartLineItem();
+        newLineItem.setCourse(myCourse);
+        console.log(myCourse);
+        this.props.addCourseToCart(newLineItem, this.props.history);
     }
 
     render() {
@@ -119,11 +120,11 @@ const mapStateToProps = (state) => (
     // this links Course functions to the dispatcher so we can call sagas.
 const mapDispatchToProps = dispatch => (
     {
-        addCart: (cart, history) => {
-            dispatch(updateCart(cart));    // call to the reducer via action
+        addCourseToCart: (course, history) => {
+            dispatch(addCourseToCart(course));    // call to the saga via action
             history.push("/cart");           // push to new component on completion
         },
     }
 );
 
-export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Course));
+export default connect(mapStateToProps, mapDispatchToProps) (withRouter(CoursePage));

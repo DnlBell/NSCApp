@@ -11,13 +11,16 @@ const defaultState = {
 };
 
 function reduceUpdateCartItems(state, action) {
-    const newState = extend({}, state, {cart: action.cart});
+    const newCart = new cart();
+    newCart.copy(state.cart);
+    newCart.addItem(action.lineItem);
+    const newState = extend({}, state, {cart: newCart});
     return newState;
 }
 
 const cartReducer = (state = defaultState, action) => {
     switch (action.type){
-        case (actionTypes.UPDATE_CART_ITEMS):
+        case (actionTypes.CART_REDUCE_UPDATE_ITEMS):
             return reduceUpdateCartItems(state, action);
         case (actionTypes.CLEAR_CART):
             // state= unionWith(state, {cart: null});
