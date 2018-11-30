@@ -1,9 +1,11 @@
 import { all, fork } from 'redux-saga/effects';
 import yieldSearchSagas from './searchSagas';
+import yieldAuthSagas from './authSagas';
 
 function* initGlobalSaga() {
     yield all([
-        fork (yieldSearchSagas)
+        fork (yieldSearchSagas),
+        fork (yieldAuthSagas)
     ]);
 };
 

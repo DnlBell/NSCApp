@@ -3,7 +3,8 @@ import { View, ScrollView, Text, Image, TouchableOpacity, FlatList } from 'react
 import { withRouter } from 'react-router-native';
 import { connect } from 'react-redux';
 import { updateCart } from '../actions/cartActions'
-import { cart } from 'mspnmodel/distribution/cart/cart';
+import cart from 'mspnmodel/distribution/cart/cart';
+import course from  'mspnmodel/distribution/course/course';
 import Footer from '../components/Footer';
 import urls from '../constants/urls';
 import styles from '../styles/Course';
@@ -15,7 +16,9 @@ class Course extends PureComponent{
             course : {},
             status: false
         };
+
         this.addToCart = this.addToCart.bind(this);
+
     }
     
     toggleStatus(){
@@ -70,8 +73,10 @@ class Course extends PureComponent{
     addToCart() {
         const newCart = new cart();
         newCart.copy(this.props.cart);
+        const myCourse = new course();
+        myCourse.buildFromJSON(this.state.course);
+        newCart.addItem(myCourse);
         this.props.addCart(newCart, this.props.history);
-        console.log(this.props.newCart);
     }
 
     render() {
@@ -111,11 +116,11 @@ const mapStateToProps = (state) => (
     }
 );
 
-    // this links Searcher functions to the dispatcher so we can call sagas.
+    // this links Course functions to the dispatcher so we can call sagas.
 const mapDispatchToProps = dispatch => (
     {
         addCart: (cart, history) => {
-            dispatch(updateCart(cart));    // call to the saga via action
+            dispatch(updateCart(cart));    // call to the reducer via action
             history.push("/cart");           // push to new component on completion
         },
     }
