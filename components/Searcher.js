@@ -97,7 +97,7 @@ class Searcher extends Component {
           onPress = {this.onPressSearch}
           style = {styles.searchButton}
         >
-          <Text style = {styles.seachButtonText}>Search</Text>
+          <Text testID="search" style = {styles.seachButtonText}>Search</Text>
         </TouchableOpacity>
       </View>
     );

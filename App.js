@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router';
 import { NativeRouter, AndroidBackButton} from 'react-router-native';
 import { Provider } from 'react-redux';
 import configureStore from './stores/configureStore';
-
 import Profile from './screens/Profile.js';
 import Search from './screens/Search.js';
 import Landing from './screens/Landing.js';
@@ -30,7 +29,7 @@ export default class App extends React.Component {
                   <Switch>
                       <Route exact path="/" component={Landing} />
                       <Route path="/course" component={CoursePage} />
-                      <Route path="/search" component={Search} />
+                      <Route testID='search' path="/search" component={Search} />
                       <Route path="/results" component={Results} />
                       <Route path="/profile" component={Profile} />
                       <Route path="/login" component={Login} />

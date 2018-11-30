@@ -17,7 +17,9 @@ class CoursePage extends PureComponent{
             course : {},
             status: false
         };
+
         this.addToCart = this.addToCart.bind(this);
+
     }
     
     toggleStatus(){
