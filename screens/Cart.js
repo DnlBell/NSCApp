@@ -6,14 +6,14 @@ import { withRouter } from 'react-router-native';
 import Footer from '../components/Footer'; 
 import Header from '../components/Header';
 
-
 class Cart extends Component {
     constructor(props){
         super(props);
     }
 
     componentDidMount(){
-        console.log(this.props.cart.items[0]);
+        console.log(this.props.cart);
+        console.log(this.props.cart.getItems()[0].getPrice());
     }
 
     render(){
