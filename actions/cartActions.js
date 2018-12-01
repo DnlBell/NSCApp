@@ -13,6 +13,3 @@ export function reduceUpdateCart(lineItem = {}) {
         lineItem
     }
 }
-
-module.exports = updateCart;
-

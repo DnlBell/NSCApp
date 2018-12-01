@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-native';
+import table from 'console.table';
 
 import Footer from '../components/Footer'; 
 import Header from '../components/Header';
@@ -9,19 +10,33 @@ import Header from '../components/Header';
 class Cart extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            courseObject:{}
+        };
     }
 
     componentDidMount(){
-        console.log(this.props.cart);
-        console.log(this.props.cart.getItems()[0].getPrice());
+        //console.log(this.props.cart.getItems()[0].getPrice());
+        const result = table.getTable(this.props.cart.getItems()[0].getCourse());
+        console.log(this.props.cart.getItems()[0].getCourse().title);
+        this.setState({
+            courseObject: result
+        });
     }
 
     render(){
+
+        const title = this.props.cart.getItems()[0].getCourse().title;
+        const price = this.props.cart.getItems()[0].getPrice();
+        const vendor = this.props.cart.getItems()[0].getCourse().vendorName;
+
         return(
         <View style={styles.container}>
             <ScrollView>
                 <Header/>
-                <Text>Cart</Text>
+                <Text>{title}</Text>
+                <Text>{price}</Text>
+                <Text>{vendor}</Text>
             </ScrollView>
             <Footer/>
         </View>
