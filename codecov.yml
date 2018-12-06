@@ -1,7 +1,9 @@
 ignore:
-  - "./actions"
+  - "./actions/authAction.js"
+  - "./actions/authAction.js"
   - "./api"
   - "./screens"
   - "./sagas"
   - "./reducers"
   - "./components/Course"
+  - "./components/Searcher.js"
