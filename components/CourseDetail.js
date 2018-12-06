@@ -14,7 +14,7 @@ const CourseDetail = (props) => {
             imageStyle={{resizeMode:"stretch"}}
             >
                 <Text style={styles.textStyle}>{props.course.title}</Text>
-                <Button title="Details" style = {styles.detailsButton} onPress={() => props.history.push("/course", {id: props.course.id})}/>
+                <Button title="Details" testID={'CourseDetail'} style = {styles.detailsButton} onPress={() => props.history.push("/course", {id: props.course.id})}/>
             </ImageBackground>
         </Card>
     )
