@@ -55,6 +55,14 @@
       "/node_modules/",
       "(.test)\\.(ts|tsx|js)$",
       "/distribution/.*\\.(ts|js)$"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/actions/authActions.js",
+      "<rootDir>/actions/cartActions.js",
+      "<rootDir>/components/Categories.js",
+      "<rootDir>/components/Header.js",
+      "<rootDir>/components/LabeledInput.js",
+      "<rootDir>/components/MarketingBar.js"
     ]
   }
 }
