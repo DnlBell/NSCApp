@@ -27,7 +27,7 @@ class Cart extends Component {
     render(){
 
         const title = this.props.cart.getItems()[0].getCourse().title;
-        const price = this.props.cart.getItems()[0].getPrice();
+        const price = this.props.cart.getItems()[0].getPrice()/100;
         const vendor = this.props.cart.getItems()[0].getCourse().vendorName;
 
         return(
@@ -35,7 +35,7 @@ class Cart extends Component {
             <ScrollView>
                 <Header/>
                 <Text>{title}</Text>
-                <Text>{price}</Text>
+                <Text>{price.toLocaleString("en-US", {style:"currency", currency:"USD"})}</Text>
                 <Text>{vendor}</Text>
             </ScrollView>
             <Footer/>
