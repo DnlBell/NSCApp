@@ -2,7 +2,6 @@ ignore:
   - "./actions/authActions.js"
   - "./actions/searchActions.js"
   - "./actions/cartActions.js"
-  - "./api/authApi.js"
   - "./screens/Course.js"
   - "./screens/Login.js"
   - "./screens/Profile.js"

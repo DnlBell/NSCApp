@@ -6,7 +6,7 @@ const authApi = {
         // using the ref to grab the form value
         const formValues = userInfo;
         
-        /* istanbul ignore next */ 
+        /* istanbul ignore if */
         if (userInfo != undefined) {
             return fetch(url, {
               method: 'POST',
