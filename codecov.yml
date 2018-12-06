@@ -3,7 +3,7 @@ ignore:
   - "./actions/authAction.js"
   - "./api"
   - "./screens"
-  - "./sagas"
+  - "./sagas/authSagas"
   - "./reducers"
   - "./components/Course"
   - "./components/Searcher.js"
