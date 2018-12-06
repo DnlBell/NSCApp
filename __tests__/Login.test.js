@@ -17,3 +17,9 @@ it('renders correctly', () => {
     .toJSON();
   expect(findItem(tree, 'Login')).toBeDefined();
 });
+
+ test('onSubmit function works', () => {
+    // mock lodash random to return the value 2 in second test
+    Login.onSubmit = jest.fn(() => true);
+    expect(Login.onSubmit()).toBeDefined();
+  });
