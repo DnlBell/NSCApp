@@ -34,7 +34,7 @@ const CourseRow = (props) => {
                 </View>
             </View>
             <Text style={styles.description}>{props.course.description}</Text>
-            <TouchableOpacity style={styles.details} onPress={() => props.history.push("/course", {id: props.course.id})} >
+            <TouchableOpacity testID={'CourseRow'} style={styles.details} onPress={() => props.history.push("/course", {id: props.course.id})} >
                 <Text style={styles.detailsText}>View details</Text>
             </TouchableOpacity>
             <View style={styles.line}/>

@@ -22,6 +22,6 @@ it('renders correctly', () => {
   const tree = renderer
     .create(withRouter(<CourseRow />))
     .toJSON();
-  expect(findItem(tree, 'search')).toBeDefined();
+  expect(findItem(tree, 'CourseRow')).toBeDefined();
 });
 
