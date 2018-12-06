@@ -54,8 +54,7 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "(.test)\\.(ts|tsx|js)$",
-      "/distribution/.*\\.(ts|js)$",
-      "/Actions/"
+      "/distribution/.*\\.(ts|js)$"
     ]
   }
 }
