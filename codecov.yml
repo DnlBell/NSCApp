@@ -9,4 +9,3 @@ ignore:
   - "./sagas/authSagas"
   - "./reducers"
   - "./components/Course"
-  - "./components/Searcher.js"
