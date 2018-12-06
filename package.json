@@ -58,8 +58,7 @@
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/actions/authActions.js",
-      "<rootDir>/actions/cartActions.js",
-      "<rootDir>/components/MarketingBar.js"
+      "<rootDir>/actions/cartActions.js"
     ]
   }
 }
