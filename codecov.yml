@@ -8,5 +8,6 @@ ignore:
   - "./screens/Profile.js"
   - "./screens/Cart.js"
   - "./sagas/authSagas"
+  - "./sagas/searchSagas"
   - "./reducers"
   - "./components/Course"
