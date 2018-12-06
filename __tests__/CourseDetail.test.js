@@ -2,6 +2,7 @@ import CourseDetail from '../components/CourseDetail';
 import renderer from 'react-test-renderer';
 import React from 'react';
 import { withRouter } from 'react-router-native';
+const findItem = () => true;
 
 it('renders correctly', () => {
   const tree = renderer
@@ -18,8 +19,3 @@ it('renders correctly', () => {
 });
 
 
- test('onSubmit function works', () => {
-    // mock lodash random to return the value 2 in second test
-    CourseDetail = jest.fn(() => true);
-    expect(CourseDetail).toBeDefined();
-  });

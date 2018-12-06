@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { View, ScrollView, StyleSheet, Dimensions } from 'react-native';
 import CourseDetail from './CourseDetail';
 import urls from '../constants/urls';
+import "isomorphic-fetch";
 
 const { width } = Dimensions.get('window');
 const height = width * 0.8
