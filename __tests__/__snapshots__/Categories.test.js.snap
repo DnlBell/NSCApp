@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#5E5E5E",
+        "fontSize": 22,
+        "margin": 16,
+        "textAlign": "center",
+      }
+    }
+  >
+    Explore Our Categories
+  </Text>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Academics
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Arts & crafts
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Camps
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Dance & Music
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Food & Drink
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Health & Well-Being
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Home & Gardening
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Language, Writing & Humanities
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Lifestyle & Leisure
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Sports & Activities
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Tech & Professional Development
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#5E5E5E",
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 16,
+          "opacity": 1,
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Theater, Film & Television
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 18,
+      "paddingTop": 18,
+      "width": 732,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#5E5E5E",
+        "fontSize": 16,
+        "left": 10,
+        "position": "absolute",
+        "top": 0,
+      }
+    }
+  />
+  <TextInput
+    allowFontScaling={true}
+    blurOnSubmit={true}
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "borderBottomColor": "#5E5E5E",
+        "borderBottomWidth": 1,
+        "color": "#5E5E5E",
+        "flex": 0.9,
+        "fontSize": 16,
+        "height": 32,
+        "marginBottom": 9,
+        "padding": 18,
+      }
+    }
+  />
+</View>
+`;
