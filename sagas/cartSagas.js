@@ -1,7 +1,7 @@
 import actionTypes from '../constants/actionsTypes';
 import { reduceUpdateCart } from '../actions/cartActions';
 import{ all, call, fork, takeLatest, put } from 'redux-saga/effects';
-
+/* istanbul ignore next */
 function* cartUpdate(action){
 	/* istanbul ignore next */
     const cartLineItem = action.course;
