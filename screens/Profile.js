@@ -85,6 +85,7 @@ const Profile = (props) => {
         <TouchableOpacity 
           onPress = {() => props.history.push("/login")}
           style = {styles.loginButton}
+          testID={"Profile"}
         >
           <Text style = {styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
