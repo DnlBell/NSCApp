@@ -11,9 +11,9 @@ it('renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-// it('renders correctly', () => {
-//   const tree = renderer
-//     .create(connect(<Login />))
-//     .toJSON();
-//   expect(findItem(tree, 'search')).toBeDefined();
-// });
+it('renders correctly', () => {
+  const tree = renderer
+    .create(connect(<Login />))
+    .toJSON();
+  expect(findItem(tree, 'Login')).toBeDefined();
+});

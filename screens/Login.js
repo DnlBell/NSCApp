@@ -87,6 +87,7 @@ class Login extends Component {
                 <Button 
                   title="Login"
                   onPress={this.onSubmit}
+                  testID={'Login'}
                   />
               </View>
             </ScrollView>
