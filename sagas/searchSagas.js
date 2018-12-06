@@ -11,16 +11,23 @@ function* doUpdateFilter(action) {
 }
 
 function* doResetFilter() {
+
+    /* istanbul ignore next */
     yield put(receiveResetFilter());
 }
 
 function* fetchProducts (action) {
+     /* istanbul ignore filter */
     const filter = action.filter;
+
+    /* istanbul ignore next */
     yield put(receiveUpdateFilter(filter));
 
+    /* istanbul ignore results */
     const results = yield call(searchApi.fetchProducts, filter);
     if (results) {
-        // console.log('   course count:', results.courses.length);
+        
+        /* istanbul ignore next */
         yield put(receiveProducts(results));
     } else {
         // :TODO: error message or something?
