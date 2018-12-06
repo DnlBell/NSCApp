@@ -1,4 +1,4 @@
 ignore:
-  - "NSCApp/actions"
-  - "NSCApp/api"
-  - "NSCApp/screens"
+  - "./actions"
+  - "./api"
+  - "./screens"
