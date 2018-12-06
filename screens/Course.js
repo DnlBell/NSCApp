@@ -100,7 +100,7 @@ class CoursePage extends PureComponent{
                             </ScrollView>
                             : null}
                             <TouchableOpacity style={styles.button}>
-                                <Text style={styles.buttonText} onPress={this.addToCart}>Add to Cart</Text>
+                                <Text testID={'Course'} style={styles.buttonText} onPress={this.addToCart}>Add to Cart</Text>
                             </TouchableOpacity>
                         </View>
                 </ScrollView>
