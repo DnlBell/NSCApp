@@ -1,20 +1,46 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, TextInput, KeyboardAvoidingView, TouchableOpacity, Alert  } from 'react-native';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-native';
 import table from 'console.table';
 
 import Footer from '../components/Footer'; 
 import Header from '../components/Header';
-import styles from '../styles/Course';
-import stylesR from '../styles/CourseRow';
+import styles from '../styles/Cart';
+
 
 class Cart extends Component {
     constructor(props){
         super(props);
         this.state = {
-            courseObject:{}
+            courseObject:{},
+            firstName:'',
+            lastName:''
         };
+
+        this.onChangeFirstName = this.onChangeFirstName.bind(this);
+        this.onChangeLastName = this.onChangeLastName.bind(this);
+        this.onPressPurchase = this.onPressPurchase.bind(this);
+    }
+
+    onChangeFirstName(firstName) {
+        console.log('firstName', firstName);
+        this.state.firstName = firstName;
+    }
+
+    onChangeLastName(lastName) {
+        console.log('lastName', lastName);
+        this.state.lastName = lastName;
+    }
+
+    onPressPurchase(firstName,lastName) {
+        if (firstName == '' || lastName == ''){
+            Alert.alert('Inavlid Name entry' );
+        }
+        else {
+            const alertString = firstName + ', you have purchased ' + this.props.cart.getItems()[0].getCourse().title 
+            Alert.alert(alertString);
+        }
     }
 
     componentDidMount(){
@@ -33,21 +59,36 @@ class Cart extends Component {
         const vendor = this.props.cart.getItems()[0].getCourse().vendorName;
 
         return(
-        <View style={{flex:1}}>
-            <ScrollView>
-                <Header/>
-                <View styles={styles.marginFrame}>
-                <Text style={stylesR.title}>{title}</Text>
-                <Text style={stylesR.price}>${price.toLocaleString("en-US", {style:"currency", currency:"USD"})}</Text>
-                <Text style={stylesR.description}>{vendor}</Text>
-                <TouchableOpacity style={styles.button} onPress={()=> this.props.history.push("/purchase", {title: title})}>
-                                    <Text style={styles.buttonText}>Checkout</Text>
-                </TouchableOpacity>
-                </View>
-                
-            </ScrollView>
-            <Footer/>
-        </View>
+        
+            <View style={styles.container}>
+                <KeyboardAvoidingView behavior="padding" enabled>
+                    <ScrollView>
+                        <Header/>
+                        <Text style={styles.title}>{title}</Text>
+                        <Text style={styles.text}>Offered By: {vendor}</Text>
+                        <View style={styles.line}/>
+                        <Text style={styles.text}>Who is going?</Text>
+                        <TextInput
+                            style={styles.inputText}
+                            onChangeText={this.onChangeFirstName}
+                            placeholder="First Name"
+                        />
+                        <TextInput
+                            style={styles.inputText}
+                            onChangeText={this.onChangeLastName}
+                            placeholder="Last Name"
+                        />
+                        <View style={styles.line}/>
+                        <Text style={styles.text}>Total Cost: {price.toLocaleString("en-US", {style:"currency", currency:"USD"})}.00</Text>
+                        <TouchableOpacity style={styles.button} onPress={() => this.onPressPurchase(this.state.firstName,this.state.lastName)}>
+                            <Text style={styles.buttonText}>Purchase</Text>
+                        </TouchableOpacity>
+                        
+                    </ScrollView>
+                </KeyboardAvoidingView>
+                <Footer/>
+            </View>
+        
         )
     }
 
@@ -68,8 +109,3 @@ const mapDispatchToProps = dispatch => (
 
 export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Cart));
 
-// const styles = StyleSheet.create({
-//     container:{
-//         flex:1,
-//     }
-// });
