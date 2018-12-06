@@ -12,19 +12,24 @@ import filterKeywords from 'mspnmodel/distribution/filter/filterKeyword';
 
 class Searcher extends Component {
   constructor(props) {
+
+    /* istanbul ignore next */
     super(props);
     this.state = {error: false}
     let kwStr = '';
 
+    /* istanbul ignore next */
     if (props.filter && props.filter.keywords && props.filter.keywords.keywords && props.filter.keywords.keywords.length) {
         kwStr = this.parseKeywords(props.filter.keywords.keywords);
     }
 
+    /* istanbul ignore next */
     this.state = {
       keywords: kwStr,
       location: ''
     };
 
+    /* istanbul ignore next */
     this.onPressSearch = this.onPressSearch.bind(this);
     this.onChangeKeywords = this.onChangeKeywords.bind(this);
     this.onChangeLocation = this.onChangeLocation.bind(this);
@@ -41,12 +46,14 @@ class Searcher extends Component {
   }
 
   onChangeKeywords(keywords) {
-      console.log('keywords', keywords);
+      
+      /* istanbul ignore next */
       this.setState({keywords});
   }
 
   onChangeLocation(location) {
-      console.log('location', location);
+      
+      /* istanbul ignore next */
       this.setState({location})
   }
 
