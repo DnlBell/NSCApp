@@ -65,6 +65,7 @@ class Searcher extends Component {
   }
 
   render() {
+    /* istanbul ignore next */
     return (
       <View style = {styles.searcherBox}>
         <TextInput 
