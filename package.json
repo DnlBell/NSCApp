@@ -52,8 +52,10 @@
     ],
     "collectCoverage": true,
     "coveragePathIgnorePatterns": [
-      "actions/*.js",
-      "screens/*.js"
+      "/node_modules/",
+      "(.test)\\.(ts|tsx|js)$",
+      "/distribution/.*\\.(ts|js)$",
+      "/Actions/"
     ]
   }
 }
