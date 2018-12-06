@@ -9,7 +9,7 @@ import Landing from './screens/Landing.js';
 import CoursePage from './screens/Course.js';
 import Cart from './screens/Cart.js';
 import Filter from './screens/Filter.js';
-import Purchase from './screens/Filter.js';
+import Purchase from './screens/Purchase.js';
 import Login from './screens/Login.js';
 import Results from './screens/Results.js';
 
