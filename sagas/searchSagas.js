@@ -16,8 +16,10 @@ function* doResetFilter() {
     yield put(receiveResetFilter());
 }
 
+/* istanbul ignore next */
 function* fetchProducts (action) {
-     /* istanbul ignore filter */
+
+     /* istanbul ignore next */
     const filter = action.filter;
 
     /* istanbul ignore next */
@@ -26,7 +28,7 @@ function* fetchProducts (action) {
     /* istanbul ignore results */
     const results = yield call(searchApi.fetchProducts, filter);
     if (results) {
-        
+
         /* istanbul ignore next */
         yield put(receiveProducts(results));
     } else {
