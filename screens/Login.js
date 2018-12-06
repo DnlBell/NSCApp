@@ -1,55 +1,72 @@
 import React, {Component} from 'react';
 import { View, ScrollView, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Dimensions } from "react-native";
-
+import { withRouter } from 'react-router-native';
+import {Redirect} from 'react-router-native';
 import formModel from 'tcomb-form-native';
+import { connect } from 'react-redux';
 
 import Header from '../components/Header';
 import Footer from'../components/Footer.js';
 
 import styles from'../styles/Login.js';
 
+import { loginSubmit } from '../actions/authActions';
+import Users from 'mspnmodel/distribution/user/user';
+
 
 var width = Dimensions.get('window').width - 18;
 // set up the form model
 const Form = formModel.form.Form;
 
+
 // define the User model
-const User = formModel.struct({
+const TUser = formModel.struct({
   email: formModel.String,
   password: formModel.String,
 });
 
+const options = {
+  auto: 'placeholders',
+  fields: {
+    password: {
+      password: true,
+      secureTextEntry: true,
+    },
+    email: {
+      keyboardType: 'email-address',
+      autoCorrect: false,
+      autoCapitalize: false,
+    }
+  }
+}
+
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.handler = this.handler.bind(this);
-  }
-  
-  // componentDidMount() {
 
-  // }
-  // handle form submission
-  handler() {
-    // using the ref to grab the form value
-    const formValues = this._form.getValue();
-    console.log(formValues);
+    this.state = {
+      email:'',
+      password:''
+    }
 
-    return fetch('https://mspnapi.dolehesten.org/auth/signup', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        uid: formValues.email,
-        pwd: formValues.password
-      })
-    }).then((response) => response.json()).then((data)=>console.log(data.token)).catch((error) => {
-      console.log(error);
-    })
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+
+  onSubmit(userInfo) {
+    const user = new Users(); // might not work!
+      // this should come from your fomr data... but I just hard coded it.
+    user.uid = 'leyth@gmail.com';
+    user.pwd = 'Password';
+    this.props.login(user, this.props.history);
+  }
+
+  // handler used to be here
     render() {
+      // default value for TESTING ONLY
+      this.createValue = {'email': 'Leyth@gmail.com', 'password': 'Password'}
+
         return(
           <View style = {{flex:1}}>
             <ScrollView >
@@ -62,12 +79,15 @@ class Login extends Component {
                   <Text style = {styles.buttonText}>Login with Google</Text>
                 </TouchableOpacity>
                 <Form 
-                  type={User}
-                  ref={c => this._form = c} 
+                  type={TUser}
+                  ref={c => this._form = c}
+                  options={options} 
+                  value={this.createValue}
                 />
                 <Button 
                   title="Login"
-                  onPress={this.handler}
+                  onPress={this.onSubmit}
+                  testID={'Login'}
                   />
               </View>
             </ScrollView>
@@ -77,5 +97,23 @@ class Login extends Component {
     }
 };
 
+
+
+    // this links Searcher props to redux store
+    const mapStateToProps = (state) => (
+      {
+          userInfo: state.authReducer.userInfo,
+      }
+  );
+  
+      // this links Searcher functions to the dispatcher so we can call sagas.
+  const mapDispatchToProps = dispatch => (
+      {
+          login: (userInfo, history) => {
+              dispatch(loginSubmit(userInfo));    // call to the saga via action
+              history.push("/profile");           // push to new component on completion
+            },
+      }
+  );
 // export this 
-export default Login;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

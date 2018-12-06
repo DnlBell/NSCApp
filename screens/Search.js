@@ -13,7 +13,7 @@ class Search extends Component {
       <ScrollView>
         <Header />
         <View style={styles.searcherFrame}>
-          <Searcher />
+            <Searcher />
         </View>
       </ScrollView>
       <Footer />

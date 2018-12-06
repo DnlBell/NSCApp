@@ -9,26 +9,11 @@ import { fetchProducts } from '../actions/searchActions';
 import filter from 'mspnmodel/distribution/filter/filter';
 import filterKeywords from 'mspnmodel/distribution/filter/filterKeyword';
 
-    // this links Searcher props to redux store
-const mapStateToProps = (state) => (
-    {
-        filter: state.searchReducer.searchFilter,
-    }
-);
-
-    // this links Searcher functions to the dispatcher so we can call sagas.
-const mapDispatchToProps = dispatch => (
-    {
-        onSearch: (filter, history) => {
-            dispatch(fetchProducts(filter));    // call to the saga via action
-            history.push("/results");           // push to new component on completion
-        },
-    }
-);
 
 class Searcher extends Component {
   constructor(props) {
     super(props);
+    this.state = {error: false}
     let kwStr = '';
 
     if (props.filter && props.filter.keywords && props.filter.keywords.keywords && props.filter.keywords.keywords.length) {
@@ -104,4 +89,25 @@ class Searcher extends Component {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Searcher));
+    // this links Searcher props to redux store
+    const mapStateToProps = (state) => (
+        {
+            filter: state.searchReducer.searchFilter,
+        }
+    );
+    
+        // this links Searcher functions to the dispatcher so we can call sagas.
+    const mapDispatchToProps = dispatch => (
+        {
+            onSearch: (filter, history) => {
+                dispatch(fetchProducts(filter));    // call to the saga via action
+                history.push("/results");           // push to new component on completion
+            },
+        }
+    );
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Searcher)

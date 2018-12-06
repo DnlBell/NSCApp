@@ -6,10 +6,10 @@ import configureStore from './stores/configureStore';
 import Profile from './screens/Profile.js';
 import Search from './screens/Search.js';
 import Landing from './screens/Landing.js';
-import Course from './screens/Course.js';
+import CoursePage from './screens/Course.js';
 import Cart from './screens/Cart.js';
 import Filter from './screens/Filter.js';
-import Purchase from './screens/Filter.js';
+import Purchase from './screens/Purchase.js';
 import Login from './screens/Login.js';
 import Results from './screens/Results.js';
 
@@ -28,7 +28,7 @@ export default class App extends React.Component {
             <AndroidBackButton>
                   <Switch>
                       <Route exact path="/" component={Landing} />
-                      <Route path="/course" component={Course} />
+                      <Route path="/course" component={CoursePage} />
                       <Route testID='search' path="/search" component={Search} />
                       <Route path="/results" component={Results} />
                       <Route path="/profile" component={Profile} />
