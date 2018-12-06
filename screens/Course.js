@@ -76,7 +76,7 @@ class CoursePage extends PureComponent{
         myCourse.buildFromJSON(this.state.course);
         const newLineItem = new CartLineItem();
         newLineItem.setCourse(myCourse);
-        console.log(myCourse);
+        // console.log(myCourse);
         this.props.addCourseToCart(newLineItem, this.props.history);
     }
 
