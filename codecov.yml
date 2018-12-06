@@ -1,6 +1,6 @@
 ignore:
-  - "./actions/authAction.js"
-  - "./actions/authAction.js"
+  - "./actions/authActions.js"
+  - "./actions/cartActions.js"
   - "./api"
   - "./screens/Course.js"
   - "./screens/Login.js"
