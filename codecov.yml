@@ -5,4 +5,3 @@ ignore:
   - "./sagas"
   - "./reducers"
   - "./components/Course"
-  - "./components/Searcher.js"
