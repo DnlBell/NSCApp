@@ -8,7 +8,6 @@ export function loginSubmit(userInfo = {}) {
 }
 
 export function loginResult(userInfo, success, profile, token) {
-    console.log('loginResult-- action');
     return {
         type: actionTypes.LOGIN_RECIEVE_USER_INFO,
         userInfo,
