@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-native';
 import Footer from '../components/Footer'; 
 import Header from '../components/Header';
 
+/* instanbul ignore Purchase */ 
 const Purchase = (props) =>(
             <View style={styles.container}>
                 <ScrollView>
