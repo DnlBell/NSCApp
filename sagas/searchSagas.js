@@ -6,19 +6,19 @@ import actionTypes from '../constants/actionsTypes';
 import searchApi from '../api/searchApi'
 
 function* doUpdateFilter(action) {
+
+    /* istanbul ignore next */
     const filter = action.filter;
     yield put(receiveUpdateFilter(filter));
 }
 
 function* doResetFilter() {
-
     /* istanbul ignore next */
     yield put(receiveResetFilter());
 }
 
 /* istanbul ignore next */
 function* fetchProducts (action) {
-
      /* istanbul ignore next */
     const filter = action.filter;
 
