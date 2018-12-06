@@ -4,3 +4,5 @@ ignore:
   - "./screens"
   - "./sagas"
   - "./reducers"
+  - "./components/Course"
+  - "./components/Searcher.js"
