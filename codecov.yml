@@ -9,5 +9,6 @@ ignore:
   - "./sagas/authSagas"
   - "./sagas/searchSagas"
   - "./reducers"
+  - "./api/authApi.js"
   - "./components/Course"
   - "./components/Searcher.js"
