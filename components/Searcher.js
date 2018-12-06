@@ -18,8 +18,9 @@ class Searcher extends Component {
     this.state = {error: false}
     let kwStr = '';
 
-    /* istanbul ignore next */
     if (props.filter && props.filter.keywords && props.filter.keywords.keywords && props.filter.keywords.keywords.length) {
+        
+        /* istanbul ignore kwStr */
         kwStr = this.parseKeywords(props.filter.keywords.keywords);
     }
 
