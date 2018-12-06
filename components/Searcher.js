@@ -20,7 +20,7 @@ class Searcher extends Component {
 
     if (props.filter && props.filter.keywords && props.filter.keywords.keywords && props.filter.keywords.keywords.length) {
         
-        /* istanbul ignore kwStr */
+        /* istanbul ignore next */
         kwStr = this.parseKeywords(props.filter.keywords.keywords);
     }
 
