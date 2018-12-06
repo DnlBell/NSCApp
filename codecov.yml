@@ -2,7 +2,6 @@ ignore:
   - "./actions/authActions.js"
   - "./actions/searchActions.js"
   - "./actions/cartActions.js"
-  - "./api"
   - "./screens/Course.js"
   - "./screens/Login.js"
   - "./screens/Profile.js"
@@ -11,3 +10,4 @@ ignore:
   - "./sagas/searchSagas"
   - "./reducers"
   - "./components/Course"
+  - "./components/Searcher.js"
