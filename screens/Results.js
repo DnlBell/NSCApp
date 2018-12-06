@@ -22,6 +22,7 @@ export default ({ location }) =>(
 */
 
 const Results = (props) => {
+    /* istanbul ignore next */
     return (
     <View style={styles.container}>
         <ScrollView>
