@@ -4,7 +4,11 @@ import urls from '../constants/urls';
 
 const searchApi = {
     fetchProducts(filter) {
+
+        /* istanbul ignore url */
         const url = `${urls.mspnApiRoot}/course/filter`;
+
+        /* istanbul ignore next */ 
         const searchFilter = {filter: filter};
         return fetch(url, {
             headers: {
