@@ -14,71 +14,73 @@ North Seattle College App
 
 # MindSpand
 
-One Paragraph of project description goes here
+This was a proof of concept projcet for a mobile version of Mindspand's current web marketplace.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To examine this project you will need to install the prerequisite software and then connect a mobile device using USB debugging or run an emulator locally.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 ```
-Give examples
+Node version manager (nvm)
+
+Node
+
+Node Package manager (npm)
+
+expo-cli
+
+git
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Installing nvm (node and npm)
 
 ```
-Give the example
+For windows users: https://github.com/coreybutler/nvm-windows/releases
+
+For linux and mac users: https://github.com/creationix/nvm/blob/master/README.md
 ```
 
-And repeat
+For expo-cli simply run the following command from a command line or terminal application.
 
 ```
-until finished
+npm install -g expo-cli
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Don't forget to install git if you don't have it.
 
 ```
-Give an example
+You can find it here: https://git-scm.com/downloads
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+Open a terminal and navigate to where you want to save a copy of the project then run the following command. 
 
 ```
-Give an example
+git clone https://github.com/NorthSeattleCollegeDreamTeam/NSCApp
 ```
 
-## Deployment
+Navigate your termainal session to the project folder.
 
-Add additional notes about how to deploy this on a live system
+```
+cd .\NSCApp\
+```
 
-## Built With
+Install project dependencies by running this command
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+```
+npm i
+```
 
-## Contributing
+Start expo
 
-Details for code of conduct and the process for submitting pull requests to us.
+```
+expo start
+```
+
+This should open up a browser window where you can send the project to an emulator or a device with usb debugging enabled.
 
 ## Versioning
 
@@ -95,12 +97,3 @@ GitHub
 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
